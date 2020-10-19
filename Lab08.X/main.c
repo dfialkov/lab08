@@ -23,8 +23,14 @@
 #pragma warning disable 520     // warning: (520) function "xyz" is never called  3
 #pragma warning disable 1498    // fputc.c:16:: warning: (1498) pointer (unknown)
 
-#define     NUM_SAMPLES     16
-uint8_t NEW_SAMPLE = false;
+#define MIC_THRESHOLD = 128
+
+#define     NUM_SAMPLES     64
+
+
+uint8_t samplesCollected = false;
+
+uint16_t thresholdRange = 10;
 
 void INIT_PIC(void);
 void myTMR0ISR(void);
@@ -57,6 +63,9 @@ void main(void) {
     printf("> "); // print a nice command prompt
 
     for (;;) {
+        if(samplesCollected){
+            //Analyze samples here.
+        }
 
         if (EUSART1_DataReady) { // wait for incoming data on USART
             cmd = EUSART1_Read();
@@ -68,8 +77,9 @@ void main(void) {
                     printf("o: k\r\n");
                     printf("Z: Reset processor\r\n");
                     printf("z: Clear the terminal\r\n");
-                    printf("s: gather %d samples from ADC\r\n", NUM_SAMPLES);
-                    printf("0-9: switch sampled channel to ANx\r\n");
+                    printf("T/t: Increase/decrease threshold 138-118\r\n");
+                    printf("f: gather 512 samples from the microphone and calculate the frequency\r\n");
+//                    printf("s: gather %d samples from ADC\r\n", NUM_SAMPLES);
                     printf("------------------------------\r\n");
                     break;
 
@@ -94,7 +104,14 @@ void main(void) {
                 case 'z':
                     for (i = 0; i < 40; i++) printf("\n>");
                     break;
-
+                    
+                case 'T':
+                    thresholdRange += 5;
+                case 't':
+                    thresholdRange -= 5;
+                case 'f':
+                    printf("The last 256 ADC samples from the microphone are: \r\n");
+/*
                     //--------------------------------------------
                     // Continue to collect samples until the user
                     // presses a key on the keyboard
@@ -110,8 +127,8 @@ void main(void) {
                     for (i = 0; i < NUM_SAMPLES; i++) // print-out samples
                         printf("%d ", adc_reading[i]);
                     printf("\r\n");
-                    break;
-
+                    break;*/
+/*
                 case '0':
                 case '1':
                 case '2':
@@ -125,7 +142,7 @@ void main(void) {
                     ADC_SelectChannel(cmd - '0');
                     printf("The ADC is now sampling AN%c\r\n", cmd);
                     break;
-
+*/
                     //--------------------------------------------
                     // If something unknown is hit, tell user
                     //--------------------------------------------
@@ -144,11 +161,11 @@ void main(void) {
 //-----------------------------------------------------------------------------
 
 void myTMR0ISR(void) {
-
+/*
     TEST_PIN_SetHigh(); // Set high when every we start a new conversion
     ADCON0bits.GO_NOT_DONE = 1; // start a new conversion
     NEW_SAMPLE = true; // tell main that we have a new value
     TMR0_WriteTimer(0x10000 - (1600 - TMR0_ReadTimer()));
     TEST_PIN_SetLow(); // Monitor pulse width to determine how long we are in ISR
-
+*/
 } // end myTMR0ISR
