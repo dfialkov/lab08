@@ -23,7 +23,7 @@
 #pragma warning disable 520     // warning: (520) function "xyz" is never called  3
 #pragma warning disable 1498    // fputc.c:16:: warning: (1498) pointer (unknown)
 
-#define MIC_THRESHOLD = 128
+#define MIC_THRESHOLD  128
 
 #define     NUM_SAMPLES     64
 
@@ -107,8 +107,10 @@ void main(void) {
                     
                 case 'T':
                     thresholdRange += 5;
+                    printf("Volume range: %d - %d\r\n", MIC_THRESHOLD - thresholdRange, MIC_THRESHOLD + thresholdRange);
                 case 't':
                     thresholdRange -= 5;
+                    printf("Volume range: %d - %d\r\n", MIC_THRESHOLD - thresholdRange, MIC_THRESHOLD + thresholdRange);
                 case 'f':
                     printf("The last 256 ADC samples from the microphone are: \r\n");
 /*
