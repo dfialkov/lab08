@@ -79,30 +79,30 @@
 #define channel_AN0_SetAnalogMode()      do { ANSELAbits.ANSA0 = 1; } while(0)
 #define channel_AN0_SetDigitalMode()     do { ANSELAbits.ANSA0 = 0; } while(0)
 
-// get/set MIC_PIN aliases
-#define MIC_PIN_TRIS                 TRISAbits.TRISA5
-#define MIC_PIN_LAT                  LATAbits.LATA5
-#define MIC_PIN_PORT                 PORTAbits.RA5
-#define MIC_PIN_ANS                  ANSELAbits.ANSA5
-#define MIC_PIN_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
-#define MIC_PIN_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
-#define MIC_PIN_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
-#define MIC_PIN_GetValue()           PORTAbits.RA5
-#define MIC_PIN_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
-#define MIC_PIN_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
-#define MIC_PIN_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
-#define MIC_PIN_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
-
 // get/set TEST_PIN aliases
-#define TEST_PIN_TRIS                 TRISAbits.TRISA6
-#define TEST_PIN_LAT                  LATAbits.LATA6
-#define TEST_PIN_PORT                 PORTAbits.RA6
-#define TEST_PIN_SetHigh()            do { LATAbits.LATA6 = 1; } while(0)
-#define TEST_PIN_SetLow()             do { LATAbits.LATA6 = 0; } while(0)
-#define TEST_PIN_Toggle()             do { LATAbits.LATA6 = ~LATAbits.LATA6; } while(0)
-#define TEST_PIN_GetValue()           PORTAbits.RA6
-#define TEST_PIN_SetDigitalInput()    do { TRISAbits.TRISA6 = 1; } while(0)
-#define TEST_PIN_SetDigitalOutput()   do { TRISAbits.TRISA6 = 0; } while(0)
+#define TEST_PIN_TRIS                 TRISAbits.TRISA5
+#define TEST_PIN_LAT                  LATAbits.LATA5
+#define TEST_PIN_PORT                 PORTAbits.RA5
+#define TEST_PIN_ANS                  ANSELAbits.ANSA5
+#define TEST_PIN_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define TEST_PIN_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define TEST_PIN_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define TEST_PIN_GetValue()           PORTAbits.RA5
+#define TEST_PIN_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define TEST_PIN_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define TEST_PIN_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
+#define TEST_PIN_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
+
+// get/set MIC_PIN aliases
+#define MIC_PIN_TRIS                 TRISAbits.TRISA6
+#define MIC_PIN_LAT                  LATAbits.LATA6
+#define MIC_PIN_PORT                 PORTAbits.RA6
+#define MIC_PIN_SetHigh()            do { LATAbits.LATA6 = 1; } while(0)
+#define MIC_PIN_SetLow()             do { LATAbits.LATA6 = 0; } while(0)
+#define MIC_PIN_Toggle()             do { LATAbits.LATA6 = ~LATAbits.LATA6; } while(0)
+#define MIC_PIN_GetValue()           PORTAbits.RA6
+#define MIC_PIN_SetDigitalInput()    do { TRISAbits.TRISA6 = 1; } while(0)
+#define MIC_PIN_SetDigitalOutput()   do { TRISAbits.TRISA6 = 0; } while(0)
 
 // get/set RC6 procedures
 #define RC6_SetHigh()            do { LATCbits.LATC6 = 1; } while(0)
