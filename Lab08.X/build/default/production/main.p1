@@ -29,17 +29,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 "309 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 309:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F5794 ]
-"36 main.c
-[; ;main.c: 36:     printf("Dev'21\r\n");
+"39 main.c
+[; ;main.c: 39:     printf("Dev'21\r\n");
 [v _myTMR0ISR `(v ~T0 @X0 0 ef ]
 "111 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\stdio.h
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"12820 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12820:     struct {
+[s S618 :1 `uc 1 :1 `uc 1 ]
+[n S618 . . GO_NOT_DONE ]
+"12824
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12824:     struct {
+[s S619 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
+[n S619 . ADON GO_nDONE CHS ]
+"12829
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12829:     struct {
+[s S620 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S620 . . GO CHS0 CHS1 CHS2 CHS3 CHS4 ]
+"12838
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12838:     struct {
+[s S621 :1 `uc 1 :1 `uc 1 ]
+[n S621 . . DONE ]
+"12842
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12842:     struct {
+[s S622 :1 `uc 1 :1 `uc 1 ]
+[n S622 . . NOT_DONE ]
+"12846
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12846:     struct {
+[s S623 :1 `uc 1 :1 `uc 1 ]
+[n S623 . . nDONE ]
+"12850
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12850:     struct {
+[s S624 :1 `uc 1 :1 `uc 1 ]
+[n S624 . . GO_DONE ]
+"12854
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12854:     struct {
+[s S625 :1 `uc 1 :1 `uc 1 ]
+[n S625 . . GODONE ]
+"12819
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12819: typedef union {
+[u S617 `S618 1 `S619 1 `S620 1 `S621 1 `S622 1 `S623 1 `S624 1 `S625 1 ]
+[n S617 . . . . . . . . . ]
+"12859
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12859: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
+[v _ADCON0bits `VS617 ~T0 @X0 0 e@4034 ]
 "207 ./mcc_generated_files/eusart1.h
 [; ;./mcc_generated_files/eusart1.h: 207: _Bool EUSART1_is_rx_ready(void);
 [v _EUSART1_is_rx_ready `(a ~T0 @X0 0 ef ]
 "322
 [; ;./mcc_generated_files/eusart1.h: 322: uint8_t EUSART1_Read(void);
 [v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
+"190 main.c
+[; ;main.c: 190: myTMR0states_t timerState = MIC_IDLE;
+[c E6160 0 1 2 .. ]
+[n E6160 . MIC_IDLE MIC_WAIT_FOR_TRIGGER MIC_ACQUIRE  ]
+"12966 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12966: extern volatile unsigned char ADRESH __attribute__((address(0xFC4)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -779,244 +825,429 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 23: 
 [p n 520      ]
 "24
-[; ;main.c: 24: 
+[; ;main.c: 24:     SYSTEM_Initialize();
 [p n 1498     ]
-"31
-[; ;main.c: 31:     (INTCONbits.GIE = 1);
+"30
+[; ;main.c: 30:     INTCONbits.TMR0IF = 0;
+[v _fillBuffer `uc ~T0 @X0 1 e ]
+[i _fillBuffer
+-> -> 0 `i `uc
+]
+"32
+[; ;main.c: 32: 
 [v _samplesCollected `uc ~T0 @X0 1 e ]
 [i _samplesCollected
 -> -> 0 `i `uc
 ]
-"33
-[; ;main.c: 33: 
+"34
+[; ;main.c: 34:     (INTCONbits.GIE = 1);
+[v _adc_reading `uc ~T0 @X0 -> 64 `i e ]
+"36
+[; ;main.c: 36: 
 [v _thresholdRange `us ~T0 @X0 1 e ]
 [i _thresholdRange
 -> -> 10 `i `us
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"42
-[; ;main.c: 42:         }
+"45
+[; ;main.c: 45:     while (ADCON0bits.GO_NOT_DONE == 1);
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"44
-[; ;main.c: 44:         if ((EUSART1_is_rx_ready())) {
-[v _i `uc ~T0 @X0 1 a ]
-[v _adc_reading `uc ~T0 @X0 -> 64 `i a ]
-"45
-[; ;main.c: 45:             cmd = EUSART1_Read();
-[v _cmd `uc ~T0 @X0 1 a ]
 "47
 [; ;main.c: 47: 
+[v _i `uc ~T0 @X0 1 a ]
+"48
+[; ;main.c: 48:     for (;;) {
+[v _cmd `uc ~T0 @X0 1 a ]
+"50
+[; ;main.c: 50:             samplesCollected = 0;
 [e ( _SYSTEM_Initialize ..  ]
-"52
-[; ;main.c: 52:                     printf("Z: Reset processor\r\n");
+"55
+[; ;main.c: 55:             }
 [e ( _TMR0_WriteTimer (1 -> -> 0 `i `us ]
-"53
-[; ;main.c: 53:                     printf("z: Clear the terminal\r\n");
+"56
+[; ;main.c: 56:         }
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54:                     printf("T/t: Increase/decrease threshold 138-118\r\n");
+"57
+[; ;main.c: 57: 
 [e $U 835  ]
 [e :U 836 ]
 [e :U 835 ]
 [e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 836  ]
 [e :U 837 ]
-"56
-[; ;main.c: 56: 
+"59
+[; ;main.c: 59:             cmd = EUSART1_Read();
 [e ( _TMR0_SetInterruptHandler (1 &U _myTMR0ISR ]
-"57
-[; ;main.c: 57:                     printf("------------------------------\r\n");
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"58
-[; ;main.c: 58:                     break;
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "60
-[; ;main.c: 60: 
-[e ( _printf :s 1C ]
+[; ;main.c: 60:             switch (cmd) {
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "61
 [; ;main.c: 61: 
-[e ( _printf :s 2C ]
-"62
-[; ;main.c: 62: 
-[e ( _printf :s 3C ]
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "63
-[; ;main.c: 63:                 case 'o':
-[e ( _printf :s 4C ]
+[; ;main.c: 63:                     printf("------------------------------\r\n");
+[e ( _printf :s 1C ]
+"64
+[; ;main.c: 64:                     printf("?: Help menu\r\n");
+[e ( _printf :s 2C ]
 "65
-[; ;main.c: 65:                     break;
-{
-[e :U 838 ]
-{
+[; ;main.c: 65:                     printf("o: k\r\n");
+[e ( _printf :s 3C ]
 "66
-[; ;main.c: 66: 
-[e $ ! != -> _samplesCollected `i -> 0 `i 841  ]
-{
-"68
-[; ;main.c: 68: 
-}
-[e :U 841 ]
+[; ;main.c: 66:                     printf("Z: Reset processor\r\n");
+[e ( _printf :s 4C ]
 "70
-[; ;main.c: 70:                 case 'Z':
-[e $ ! != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 842  ]
-{
+[; ;main.c: 70: 
+[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
 "71
-[; ;main.c: 71:                     for (i = 0; i < 40; i++) printf("\n");
-[e = _cmd -> ( _EUSART1_Read ..  `uc ]
-"72
-[; ;main.c: 72:                     __asm("reset");
-[e $U 844  ]
-{
-"74
-[; ;main.c: 74: 
-[e :U 845 ]
-"75
-[; ;main.c: 75: 
-[e ( _printf :s 5C ]
-"76
-[; ;main.c: 76: 
-[e ( _printf :s 6C ]
-"77
-[; ;main.c: 77: 
-[e ( _printf :s 7C ]
-"78
-[; ;main.c: 78:                 case 'z':
-[e ( _printf :s 8C ]
-"79
-[; ;main.c: 79:                     for (i = 0; i < 40; i++) printf("\n>");
-[e ( _printf :s 9C ]
-"80
-[; ;main.c: 80:                     break;
-[e ( _printf :s 10C ]
-"81
-[; ;main.c: 81: 
-[e ( _printf :s 11C ]
-"83
-[; ;main.c: 83:                     thresholdRange += 5;
-[e ( _printf :s 12C ]
-"84
-[; ;main.c: 84:                     printf("Volume range: %d - %d\r\n", 128 - thresholdRange, 128 + thresholdRange);
-[e $U 843  ]
-"89
-[; ;main.c: 89:                     printf("The last 256 ADC samples from the microphone are: \r\n");
-[e :U 846 ]
-"90
-[e ( _printf :s 13C ]
-"91
-[e $U 843  ]
-"96
-[e :U 847 ]
-"97
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 40 `i 848  ]
-[e $U 849  ]
-[e :U 848 ]
-[e ( _printf :s 14C ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 40 `i 848  ]
-[e :U 849 ]
-}
-"98
-[; <" reset ;# ">
-"99
-[e $U 843  ]
-"104
-[e :U 851 ]
-"105
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 40 `i 852  ]
-[e $U 853  ]
-[e :U 852 ]
-[e ( _printf :s 15C ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 40 `i 852  ]
-[e :U 853 ]
-}
-"106
-[e $U 843  ]
-"108
-[e :U 855 ]
-"109
-[e =+ _thresholdRange -> -> 5 `i `us ]
-"110
-[e ( _printf , , (. :s 16C - -> -> 128 `i `ui -> _thresholdRange `ui + -> -> 128 `i `ui -> _thresholdRange `ui ]
-"111
-[e :U 856 ]
-"112
-[e =- _thresholdRange -> -> 5 `i `us ]
-"113
-[e ( _printf , , (. :s 17C - -> -> 128 `i `ui -> _thresholdRange `ui + -> -> 128 `i `ui -> _thresholdRange `ui ]
-"114
-[e :U 857 ]
-"115
-[e ( _printf :s 18C ]
-"151
-[; ;main.c: 151:                 default:
-[e :U 858 ]
-"152
-[; ;main.c: 152:                     printf("Unknown key %c\r\n", cmd);
-[e ( _printf , (. :s 19C -> _cmd `i ]
-"153
-[; ;main.c: 153:                     break;
-[e $U 843  ]
-"154
-[; ;main.c: 154:             }
-}
-[e $U 843  ]
-[e :U 844 ]
-[e [\ -> _cmd `i , $ -> -> 63 `ui `i 845
- , $ -> -> 111 `ui `i 846
- , $ -> -> 90 `ui `i 847
- , $ -> -> 122 `ui `i 851
- , $ -> -> 84 `ui `i 855
- , $ -> -> 116 `ui `i 856
- , $ -> -> 102 `ui `i 857
- 858 ]
-[e :U 843 ]
-"155
-[; ;main.c: 155:         }
-}
-[e :U 842 ]
-"156
-[; ;main.c: 156:     }
-}
+[; ;main.c: 71:                     printf("------------------------------\r\n");
 [e $U 838  ]
 [e :U 839 ]
+[e :U 838 ]
+[e $ == -> . . _ADCON0bits 0 1 `i -> 1 `i 839  ]
+[e :U 840 ]
+"74
+[; ;main.c: 74: 
+{
+[e :U 841 ]
+{
+"75
+[; ;main.c: 75: 
+[e $ ! != -> _samplesCollected `i -> 0 `i 844  ]
+{
+"76
+[; ;main.c: 76: 
+[e = _samplesCollected -> -> 0 `i `uc ]
+"77
+[; ;main.c: 77:                 case 'o':
+[e ( _printf :s 5C ]
+"79
+[; ;main.c: 79:                     break;
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 64 `i 845  ]
+[e $U 846  ]
+[e :U 845 ]
+{
+"80
+[; ;main.c: 80: 
+[e ( _printf , (. :s 6C -> *U + &U _adc_reading * -> _i `ux -> -> # *U &U _adc_reading `ui `ux `i ]
+"81
+[; ;main.c: 81: 
 }
-"158
-[; ;main.c: 158: }
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 64 `i 845  ]
+[e :U 846 ]
+}
+"82
+[; ;main.c: 82: 
+}
+[e :U 844 ]
+"84
+[; ;main.c: 84:                 case 'Z':
+[e $ ! != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 848  ]
+{
+"85
+[; ;main.c: 85:                     for (i = 0; i < 40; i++) printf("\n");
+[e = _cmd -> ( _EUSART1_Read ..  `uc ]
+"86
+[; ;main.c: 86:                     __asm("reset");
+[e $U 850  ]
+{
+"88
+[; ;main.c: 88: 
+[e :U 851 ]
+"89
+[; ;main.c: 89: 
+[e ( _printf :s 7C ]
+"90
+[; ;main.c: 90: 
+[e ( _printf :s 8C ]
+"91
+[; ;main.c: 91: 
+[e ( _printf :s 9C ]
+"92
+[; ;main.c: 92:                 case 'z':
+[e ( _printf :s 10C ]
+"93
+[; ;main.c: 93:                     for (i = 0; i < 40; i++) printf("\n>");
+[e ( _printf :s 11C ]
+"94
+[; ;main.c: 94:                     break;
+[e ( _printf :s 12C ]
+"95
+[; ;main.c: 95: 
+[e ( _printf :s 13C ]
+"97
+[; ;main.c: 97:                     thresholdRange += 5;
+[e ( _printf :s 14C ]
+"98
+[; ;main.c: 98:                     printf("Volume range: %d - %d\r\n", 128 - thresholdRange, 128 + thresholdRange);
+[e $U 849  ]
+"103
+[; ;main.c: 103:                     printf("Volume range: %d - %d\r\n", 128 - thresholdRange, 128 + thresholdRange);
+[e :U 852 ]
+"104
+[; ;main.c: 104:                     }
+[e ( _printf :s 15C ]
+"105
+[; ;main.c: 105:                     else{
+[e $U 849  ]
+"110
+[; ;main.c: 110:                     break;
+[e :U 853 ]
+"111
+[; ;main.c: 111:                 case 'f':
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 40 `i 854  ]
+[e $U 855  ]
+[e :U 854 ]
+[e ( _printf :s 16C ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 40 `i 854  ]
+[e :U 855 ]
+}
+"112
+[; ;main.c: 112: 
+[; <" reset ;# ">
+"113
+[; ;main.c: 113:                     fillBuffer = 1;
+[e $U 849  ]
+"118
+[e :U 857 ]
+"119
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 40 `i 858  ]
+[e $U 859  ]
+[e :U 858 ]
+[e ( _printf :s 17C ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 40 `i 858  ]
+[e :U 859 ]
+}
+"120
+[e $U 849  ]
+"122
+[e :U 861 ]
+"123
+[e =+ _thresholdRange -> -> 5 `i `us ]
+"124
+[e ( _printf , , (. :s 18C - -> -> 128 `i `ui -> _thresholdRange `ui + -> -> 128 `i `ui -> _thresholdRange `ui ]
+"125
+[e $U 849  ]
+"126
+[e :U 862 ]
+"127
+[e $ ! > -> _thresholdRange `ui -> -> 0 `i `ui 863  ]
+{
+"128
+[e =- _thresholdRange -> -> 5 `i `us ]
+"129
+[e ( _printf , , (. :s 19C - -> -> 128 `i `ui -> _thresholdRange `ui + -> -> 128 `i `ui -> _thresholdRange `ui ]
+"130
+}
+[e $U 864  ]
+"131
+[e :U 863 ]
+{
+"132
+[e ( _printf , , (. :s 20C - -> -> 128 `i `ui -> _thresholdRange `ui + -> -> 128 `i `ui -> _thresholdRange `ui ]
+"133
+[e ( _printf :s 21C ]
+"134
+}
+[e :U 864 ]
+"136
+[e $U 849  ]
+"137
+[e :U 865 ]
+"139
+[e = _fillBuffer -> -> 1 `i `uc ]
+"140
+[e $U 849  ]
+"176
+[; ;main.c: 176:                 default:
+[e :U 866 ]
+"177
+[; ;main.c: 177:                     printf("Unknown key %c\r\n", cmd);
+[e ( _printf , (. :s 22C -> _cmd `i ]
+"178
+[; ;main.c: 178:                     break;
+[e $U 849  ]
+"179
+[; ;main.c: 179:             }
+}
+[e $U 849  ]
+[e :U 850 ]
+[e [\ -> _cmd `i , $ -> -> 63 `ui `i 851
+ , $ -> -> 111 `ui `i 852
+ , $ -> -> 90 `ui `i 853
+ , $ -> -> 122 `ui `i 857
+ , $ -> -> 84 `ui `i 861
+ , $ -> -> 116 `ui `i 862
+ , $ -> -> 102 `ui `i 865
+ 866 ]
+[e :U 849 ]
+"180
+[; ;main.c: 180:         }
+}
+[e :U 848 ]
+"181
+[; ;main.c: 181:     }
+}
+[e $U 841  ]
+[e :U 842 ]
+}
+"183
+[; ;main.c: 183: }
 [e :UE 834 ]
 }
-"165
-[; ;main.c: 165: void myTMR0ISR(void) {
+"190
+[; ;main.c: 190: myTMR0states_t timerState = MIC_IDLE;
+[v _timerState `E6160 ~T0 @X0 1 e ]
+[i _timerState
+. `E6160 0
+]
+"192
+[; ;main.c: 192: uint8_t bufferIdx = 0;
+[v _bufferIdx `uc ~T0 @X0 1 e ]
+[i _bufferIdx
+-> -> 0 `i `uc
+]
+"193
+[; ;main.c: 193: void myTMR0ISR(void) {
 [v _myTMR0ISR `(v ~T0 @X0 1 ef ]
 {
 [e :U _myTMR0ISR ]
 [f ]
-"173
-[; ;main.c: 173: }
-[e :UE 859 ]
+"195
+[; ;main.c: 195:     uint8_t micReading = ADRESH;
+[v _micReading `uc ~T0 @X0 1 a ]
+[e = _micReading _ADRESH ]
+"200
+[; ;main.c: 200:     switch(timerState){
+[e $U 869  ]
+{
+"203
+[; ;main.c: 203:         case MIC_IDLE:
+[e :U 870 ]
+"204
+[; ;main.c: 204:             if(fillBuffer){
+[e $ ! != -> _fillBuffer `i -> 0 `i 871  ]
+{
+"205
+[; ;main.c: 205:                 timerState = MIC_WAIT_FOR_TRIGGER;
+[e = _timerState . `E6160 1 ]
+"206
+[; ;main.c: 206:                 bufferIdx = 0;
+[e = _bufferIdx -> -> 0 `i `uc ]
+"207
+[; ;main.c: 207:                 fillBuffer = 0;
+[e = _fillBuffer -> -> 0 `i `uc ]
+"209
+[; ;main.c: 209:             }
+}
+[e :U 871 ]
+"210
+[; ;main.c: 210:             break;
+[e $U 868  ]
+"211
+[; ;main.c: 211:         case MIC_WAIT_FOR_TRIGGER:
+[e :U 872 ]
+"213
+[; ;main.c: 213:             if(micReading <= 128 + thresholdRange && micReading >= 128 - thresholdRange){
+[e $ ! && <= -> _micReading `ui + -> -> 128 `i `ui -> _thresholdRange `ui >= -> _micReading `ui - -> -> 128 `i `ui -> _thresholdRange `ui 873  ]
+{
+"214
+[; ;main.c: 214:                 adc_reading[bufferIdx] = micReading;
+[e = *U + &U _adc_reading * -> _bufferIdx `ux -> -> # *U &U _adc_reading `ui `ux _micReading ]
+"215
+[; ;main.c: 215:                 bufferIdx += 1;
+[e =+ _bufferIdx -> -> 1 `i `uc ]
+"216
+[; ;main.c: 216:                 timerState = MIC_ACQUIRE;
+[e = _timerState . `E6160 2 ]
+"217
+[; ;main.c: 217:             }
+}
+[e :U 873 ]
+"218
+[; ;main.c: 218:             break;
+[e $U 868  ]
+"219
+[; ;main.c: 219:         case MIC_ACQUIRE:
+[e :U 874 ]
+"220
+[; ;main.c: 220:             adc_reading[bufferIdx] = micReading;
+[e = *U + &U _adc_reading * -> _bufferIdx `ux -> -> # *U &U _adc_reading `ui `ux _micReading ]
+"221
+[; ;main.c: 221:             bufferIdx += 1;
+[e =+ _bufferIdx -> -> 1 `i `uc ]
+"222
+[; ;main.c: 222:             if(bufferIdx >= 64){
+[e $ ! >= -> _bufferIdx `i -> 64 `i 875  ]
+{
+"224
+[; ;main.c: 224:                 samplesCollected = 1;
+[e = _samplesCollected -> -> 1 `i `uc ]
+"225
+[; ;main.c: 225:                 timerState = MIC_IDLE;
+[e = _timerState . `E6160 0 ]
+"228
+[; ;main.c: 228:             }
+}
+[e :U 875 ]
+"229
+[; ;main.c: 229:             break;
+[e $U 868  ]
+"231
+[; ;main.c: 231:         ADCON0bits.GO_NOT_DONE = 1;
+[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
+"233
+[; ;main.c: 233:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"236
+[; ;main.c: 236:         TMR0_WriteTimer(0x10000 - 400);
+[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 400 `i `l `us ]
+"238
+[; ;main.c: 238:     }
+}
+[e $U 868  ]
+[e :U 869 ]
+[e [\ -> _timerState `ui , $ -> . `E6160 0 `ui 870
+ , $ -> . `E6160 1 `ui 872
+ , $ -> . `E6160 2 `ui 874
+ 868 ]
+[e :U 868 ]
+"244
+[; ;main.c: 244: }
+[e :UE 867 ]
 }
 [p f _printf 8913024 ]
-[a 13C 32 107 13 10 62 0 ]
-[a 15C 10 62 0 ]
+[a 15C 32 107 13 10 62 0 ]
+[a 17C 10 62 0 ]
+[a 6C 37 100 32 0 ]
 [a 4C 62 32 0 ]
-[a 11C 102 58 32 103 97 116 104 101 114 32 53 49 50 32 115 97 109 112 108 101 115 32 102 114 111 109 32 116 104 101 32 109 105 99 114 111 112 104 111 110 101 32 97 110 100 32 99 97 108 99 117 108 97 116 101 32 116 104 101 32 102 114 101 113 117 101 110 99 121 13 10 0 ]
-[a 6C 63 58 32 72 101 108 112 32 109 101 110 117 13 10 0 ]
+[a 13C 102 58 32 103 97 116 104 101 114 32 53 49 50 32 115 97 109 112 108 101 115 32 102 114 111 109 32 116 104 101 32 109 105 99 114 111 112 104 111 110 101 32 97 110 100 32 99 97 108 99 117 108 97 116 101 32 116 104 101 32 102 114 101 113 117 101 110 99 121 13 10 0 ]
+[a 8C 63 58 32 72 101 108 112 32 109 101 110 117 13 10 0 ]
 [a 2C 77 105 99 114 111 112 104 111 110 101 32 101 120 112 101 114 105 109 101 110 116 115 13 10 0 ]
-[a 8C 90 58 32 82 101 115 101 116 32 112 114 111 99 101 115 115 111 114 13 10 0 ]
-[a 9C 122 58 32 67 108 101 97 114 32 116 104 101 32 116 101 114 109 105 110 97 108 13 10 0 ]
-[a 7C 111 58 32 107 13 10 0 ]
-[a 16C 86 111 108 117 109 101 32 114 97 110 103 101 58 32 37 100 32 45 32 37 100 13 10 0 ]
-[a 17C 86 111 108 117 109 101 32 114 97 110 103 101 58 32 37 100 32 45 32 37 100 13 10 0 ]
-[a 19C 85 110 107 110 111 119 110 32 107 101 121 32 37 99 13 10 0 ]
-[a 10C 84 47 116 58 32 73 110 99 114 101 97 115 101 47 100 101 99 114 101 97 115 101 32 116 104 114 101 115 104 111 108 100 32 49 51 56 45 49 49 56 13 10 0 ]
+[a 10C 90 58 32 82 101 115 101 116 32 112 114 111 99 101 115 115 111 114 13 10 0 ]
+[a 21C 84 104 114 101 115 104 111 108 100 32 97 116 32 109 105 110 105 109 117 109 13 10 0 ]
+[a 11C 122 58 32 67 108 101 97 114 32 116 104 101 32 116 101 114 109 105 110 97 108 13 10 0 ]
+[a 9C 111 58 32 107 13 10 0 ]
+[a 18C 86 111 108 117 109 101 32 114 97 110 103 101 58 32 37 100 32 45 32 37 100 13 10 0 ]
+[a 19C 86 111 108 117 109 101 32 114 97 110 103 101 58 32 37 100 32 45 32 37 100 13 10 0 ]
+[a 20C 86 111 108 117 109 101 32 114 97 110 103 101 58 32 37 100 32 45 32 37 100 13 10 0 ]
+[a 22C 85 110 107 110 111 119 110 32 107 101 121 32 37 99 13 10 0 ]
+[a 12C 84 47 116 58 32 73 110 99 114 101 97 115 101 47 100 101 99 114 101 97 115 101 32 116 104 114 101 115 104 111 108 100 32 49 51 56 45 49 49 56 13 10 0 ]
 [a 1C 105 110 76 97 98 32 48 56 13 10 0 ]
 [a 3C 68 101 118 39 50 49 13 10 0 ]
-[a 5C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
-[a 12C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
-[a 18C 84 104 101 32 108 97 115 116 32 50 53 54 32 65 68 67 32 115 97 109 112 108 101 115 32 102 114 111 109 32 116 104 101 32 109 105 99 114 111 112 104 111 110 101 32 97 114 101 58 32 13 10 0 ]
-[a 14C 10 0 ]
+[a 7C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
+[a 14C 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 10 0 ]
+[a 5C 84 104 101 32 108 97 115 116 32 50 53 54 32 65 68 67 32 115 97 109 112 108 101 115 32 102 114 111 109 32 116 104 101 32 109 105 99 114 111 112 104 111 110 101 32 97 114 101 58 32 13 10 0 ]
+[a 16C 10 0 ]

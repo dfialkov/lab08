@@ -9516,8 +9516,11 @@ void OSCILLATOR_Initialize(void);
 
 
 
+uint8_t fillBuffer = 0;
 
 uint8_t samplesCollected = 0;
+
+uint8_t adc_reading[64];
 
 uint16_t thresholdRange = 10;
 
@@ -9530,7 +9533,7 @@ void myTMR0ISR(void);
 
 void main(void) {
 
-    uint8_t i, adc_reading[64];
+    uint8_t i;
     char cmd;
 
     SYSTEM_Initialize();
@@ -9551,9 +9554,20 @@ void main(void) {
     printf("Dev'21\r\n");
     printf("> ");
 
+
+
+    ADCON0bits.GO_NOT_DONE = 1;
+    while (ADCON0bits.GO_NOT_DONE == 1);
+
+
     for (;;) {
         if(samplesCollected){
+            samplesCollected = 0;
+            printf("The last 256 ADC samples from the microphone are: \r\n");
 
+            for(uint8_t i = 0;i<64;i++){
+                printf("%d ",adc_reading[i]);
+            }
         }
 
         if ((EUSART1_is_rx_ready())) {
@@ -9597,12 +9611,23 @@ void main(void) {
                 case 'T':
                     thresholdRange += 5;
                     printf("Volume range: %d - %d\r\n", 128 - thresholdRange, 128 + thresholdRange);
+                    break;
                 case 't':
-                    thresholdRange -= 5;
+                    if(thresholdRange > 0){
+                        thresholdRange -= 5;
                     printf("Volume range: %d - %d\r\n", 128 - thresholdRange, 128 + thresholdRange);
+                    }
+                    else{
+                        printf("Volume range: %d - %d\r\n", 128 - thresholdRange, 128 + thresholdRange);
+                        printf("Threshold at minimum\r\n");
+                    }
+
+                    break;
                 case 'f':
-                    printf("The last 256 ADC samples from the microphone are: \r\n");
-# 151 "main.c"
+
+                    fillBuffer = 1;
+                    break;
+# 176 "main.c"
                 default:
                     printf("Unknown key %c\r\n", cmd);
                     break;
@@ -9616,10 +9641,56 @@ void main(void) {
 
 
 
+typedef enum {MIC_IDLE, MIC_WAIT_FOR_TRIGGER, MIC_ACQUIRE} myTMR0states_t;
+myTMR0states_t timerState = MIC_IDLE;
 
+uint8_t bufferIdx = 0;
 void myTMR0ISR(void) {
 
+    uint8_t micReading = ADRESH;
 
+
+
+
+    switch(timerState){
+
+
+        case MIC_IDLE:
+            if(fillBuffer){
+                timerState = MIC_WAIT_FOR_TRIGGER;
+                bufferIdx = 0;
+                fillBuffer = 0;
+
+            }
+            break;
+        case MIC_WAIT_FOR_TRIGGER:
+
+            if(micReading <= 128 + thresholdRange && micReading >= 128 - thresholdRange){
+                adc_reading[bufferIdx] = micReading;
+                bufferIdx += 1;
+                timerState = MIC_ACQUIRE;
+            }
+            break;
+        case MIC_ACQUIRE:
+            adc_reading[bufferIdx] = micReading;
+            bufferIdx += 1;
+            if(bufferIdx >= 64){
+
+                samplesCollected = 1;
+                timerState = MIC_IDLE;
+
+
+            }
+            break;
+
+        ADCON0bits.GO_NOT_DONE = 1;
+
+        INTCONbits.TMR0IF = 0;
+
+
+        TMR0_WriteTimer(0x10000 - 400);
+
+    }
 
 
 

@@ -27,8 +27,11 @@
 
 #define     NUM_SAMPLES     64
 
+uint8_t fillBuffer = false;
 
 uint8_t samplesCollected = false;
+
+uint8_t adc_reading[NUM_SAMPLES];
 
 uint16_t thresholdRange = 10;
 
@@ -41,7 +44,7 @@ void myTMR0ISR(void);
 
 void main(void) {
 
-    uint8_t i, adc_reading[NUM_SAMPLES];
+    uint8_t i;
     char cmd;
 
     SYSTEM_Initialize();
@@ -62,9 +65,21 @@ void main(void) {
     printf("Dev'21\r\n");
     printf("> "); // print a nice command prompt
 
+    //Get something into the buffer to make the ISR work. 
+    //While loop only runs once as part of setup.
+    ADCON0bits.GO_NOT_DONE = 1;
+    while (ADCON0bits.GO_NOT_DONE == 1);
+            
+    
     for (;;) {
         if(samplesCollected){
+            samplesCollected = false;
+            printf("The last 256 ADC samples from the microphone are: \r\n");
             //Analyze samples here.
+            for(uint8_t i = 0;i<NUM_SAMPLES;i++){
+                printf("%d ",adc_reading[i]);
+            }
+            printf("\r\n");
         }
 
         if (EUSART1_DataReady) { // wait for incoming data on USART
@@ -108,12 +123,23 @@ void main(void) {
                 case 'T':
                     thresholdRange += 5;
                     printf("Volume range: %d - %d\r\n", MIC_THRESHOLD - thresholdRange, MIC_THRESHOLD + thresholdRange);
+                    break;
                 case 't':
-                    thresholdRange -= 5;
+                    if(thresholdRange > 0){
+                        thresholdRange -= 5;
                     printf("Volume range: %d - %d\r\n", MIC_THRESHOLD - thresholdRange, MIC_THRESHOLD + thresholdRange);
+                    }
+                    else{
+                        printf("Volume range: %d - %d\r\n", MIC_THRESHOLD - thresholdRange, MIC_THRESHOLD + thresholdRange);
+                        printf("Threshold at minimum\r\n");
+                    }
+                    
+                    break;
                 case 'f':
-                    printf("The last 256 ADC samples from the microphone are: \r\n");
-/*
+                    
+                    fillBuffer = true;
+                    break;
+/*              
                     //--------------------------------------------
                     // Continue to collect samples until the user
                     // presses a key on the keyboard
@@ -129,7 +155,8 @@ void main(void) {
                     for (i = 0; i < NUM_SAMPLES; i++) // print-out samples
                         printf("%d ", adc_reading[i]);
                     printf("\r\n");
-                    break;*/
+                    break;
+ */
 /*
                 case '0':
                 case '1':
@@ -161,13 +188,63 @@ void main(void) {
 // Start an analog to digital conversion every 100uS.  Toggle RC1 so that users
 // can check how fast conversions are being performed.
 //-----------------------------------------------------------------------------
+typedef enum  {MIC_IDLE, MIC_WAIT_FOR_TRIGGER, MIC_ACQUIRE} myTMR0states_t;
+myTMR0states_t timerState = MIC_IDLE;
 
+uint8_t bufferIdx = 0;
 void myTMR0ISR(void) {
-/*
-    TEST_PIN_SetHigh(); // Set high when every we start a new conversion
-    ADCON0bits.GO_NOT_DONE = 1; // start a new conversion
-    NEW_SAMPLE = true; // tell main that we have a new value
-    TMR0_WriteTimer(0x10000 - (1600 - TMR0_ReadTimer()));
-    TEST_PIN_SetLow(); // Monitor pulse width to determine how long we are in ISR
-*/
+    //Ensure that there is always something in the buffer. 
+    uint8_t micReading = ADRESH;
+        
+    //Each ISR will tell the ADC to take the sample now. By the next ISR, the sample should be through the ADC. 
+    //This means that the data an ISR places into the buffer at a given interrupt is the data it got during the last interrupt.
+    //I believe this doesn't actually cause problems?
+    switch(timerState){
+        
+        
+        case MIC_IDLE:
+            if(fillBuffer){
+                timerState = MIC_WAIT_FOR_TRIGGER;
+                bufferIdx = 0;
+                fillBuffer = false;
+                
+            }
+            break;
+        case MIC_WAIT_FOR_TRIGGER:
+            //Start sampling when sound in threshold
+            if(micReading <= MIC_THRESHOLD + thresholdRange && micReading >= MIC_THRESHOLD - thresholdRange){
+                adc_reading[bufferIdx] = micReading;
+                bufferIdx += 1;
+                timerState = MIC_ACQUIRE;
+            }
+            break;
+        case MIC_ACQUIRE:
+            adc_reading[bufferIdx] = micReading;
+            bufferIdx += 1;
+            if(bufferIdx >= NUM_SAMPLES){
+                //Read buffer full, stop reading and notify main
+                samplesCollected = true;
+                timerState = MIC_IDLE;
+                
+                
+            }
+            break;
+        //Always need something in the buffer
+        ADCON0bits.GO_NOT_DONE = 1; 
+        
+        INTCONbits.TMR0IF = 0;
+        //Need to add fudge value. I have no idea how to count the cycles.
+        //We'll probably need to ask a TA.
+        
+        //Our current issue is that the buffer instantly fills with num_samples of the same value. 
+        //This may be because the ISR triggers way faster than the ADC can convert
+        //But if that's the case, why were we told to make the sampling rate so low?
+        TMR0_WriteTimer(0x10000 - 400);
+        
+    }
+    
+
+    
+    
+
 } // end myTMR0ISR
