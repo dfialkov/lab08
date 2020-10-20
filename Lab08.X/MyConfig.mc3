@@ -1335,7 +1335,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA5"/>
-         <value>TEST_PIN</value>
+         <value>MIC_PIN</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="SYNC"/>
@@ -1343,7 +1343,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA6"/>
-         <value>MIC_PIN</value>
+         <value>TEST_PIN</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ANSELB" settingAlias="ANSB0"/>
@@ -3797,11 +3797,11 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
-         <hash>a1665a4eeac0a1b9fdced59286c20433c13a8eafac2122d6e09c0ec5e34b5ac7</hash>
+         <hash>6a969c118b537b4d3ddd5a01255bcc4d67de9ff9d71dbc1cbbb0b3405e2d120d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\adc.h</file>
-         <hash>76c1b4bc3e5d05655b2a1345c10c79ca5f617587f3edb884b17ef0d9edc5a4af</hash>
+         <hash>c141a50d83dc3509258a14f5acbffb272580ad412f30d968c6f2352d90bf1d0a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr0.c</file>

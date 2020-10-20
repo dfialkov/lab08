@@ -18,7 +18,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "83 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 83: void ADC_SelectChannel(adc_channel_t channel)
 [c E5753 0 4 29 30 31 .. ]
-[n E5753 . channel_AN0 TEST_PIN channel_CTMU channel_DAC channel_FVRBuf2  ]
+[n E5753 . channel_AN0 MIC_PIN channel_CTMU channel_DAC channel_FVRBuf2  ]
 "12820 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12820:     struct {
 [s S623 :1 `uc 1 :1 `uc 1 ]

@@ -9287,7 +9287,7 @@ typedef struct
 typedef enum
 {
     channel_AN0 = 0x0,
-    TEST_PIN = 0x4,
+    MIC_PIN = 0x4,
     channel_CTMU = 0x1D,
     channel_DAC = 0x1E,
     channel_FVRBuf2 = 0x1F
@@ -9520,7 +9520,7 @@ uint8_t fillBuffer = 0;
 
 uint8_t samplesCollected = 0;
 
-uint8_t adc_reading[64];
+uint8_t adc_reading[256];
 
 uint16_t thresholdRange = 10;
 
@@ -9533,7 +9533,7 @@ void myTMR0ISR(void);
 
 void main(void) {
 
-    uint8_t i;
+    uint16_t i;
     char cmd;
 
     SYSTEM_Initialize();
@@ -9565,24 +9565,33 @@ void main(void) {
             samplesCollected = 0;
             printf("The last 256 ADC samples from the microphone are: \r\n");
 
-            for(uint8_t i = 0;i<64;i++){
+            for(uint16_t i = 0;i<256;i++){
                 if(i % 16 == 0){
                     printf("\r\nS[%d] ", i);
                 }
                 printf("%d ", adc_reading[i]);
             }
             printf("\r\nThe sound wave crossed at the following indices:\r\n");
-            uint8_t crossings[64];
-            uint8_t crIdx = 0;
-            for(uint8_t i = 1;i<64;i++){
+            uint8_t crossings[256/2];
+            uint16_t crIdx = 0;
+            for(uint16_t i = 1;i<256;i++){
                 if(adc_reading[i-1] <= 128 && adc_reading[i] > 128){
                     crossings[crIdx] = i - 1;
                     crIdx += 1;
                 }
             }
-            for(uint8_t i = 0;i<crIdx;i++){
+            for(uint16_t i = 0;i<crIdx;i++){
                 printf("%d ", crossings[i]);
             }
+            printf("\r\nThe sound wave had %d periods:\r\n", crIdx);
+            uint16_t periodSum = 0;
+            for(uint16_t i = 1;i<crIdx;i++){
+                printf("%d - %d = %d\r\n", crossings[i], crossings[i-1], crossings[i] - crossings[i-1]);
+                periodSum += crossings[i] - crossings[i-1];
+            }
+            uint16_t avgPeriod = periodSum/crIdx;
+            uint16_t avgPeriodUs = avgPeriod * 25;
+            printf("\r\naverage period = %d us\r\n", avgPeriodUs);
 
         }
 
@@ -9643,7 +9652,7 @@ void main(void) {
 
                     fillBuffer = 1;
                     break;
-# 193 "main.c"
+# 202 "main.c"
                 default:
                     printf("Unknown key %c\r\n", cmd);
                     break;
@@ -9660,7 +9669,7 @@ void main(void) {
 typedef enum {MIC_IDLE, MIC_WAIT_FOR_TRIGGER, MIC_ACQUIRE} myTMR0states_t;
 myTMR0states_t timerState = MIC_IDLE;
 
-uint8_t bufferIdx = 0;
+uint16_t bufferIdx = 0;
 void myTMR0ISR(void) {
 
 
@@ -9695,7 +9704,7 @@ void myTMR0ISR(void) {
         case MIC_ACQUIRE:
             adc_reading[bufferIdx] = micReading;
             bufferIdx += 1;
-            if(bufferIdx >= 64){
+            if(bufferIdx >= 256){
 
                 samplesCollected = 1;
                 timerState = MIC_IDLE;
@@ -9703,7 +9712,7 @@ void myTMR0ISR(void) {
 
             }
             break;
-# 261 "main.c"
+# 270 "main.c"
         TMR0_WriteTimer(0x10000 - (400 - TMR0_ReadTimer()));
         INTCONbits.TMR0IF = 0;
 

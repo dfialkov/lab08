@@ -9286,7 +9286,7 @@ typedef struct
 typedef enum
 {
     channel_AN0 = 0x0,
-    TEST_PIN = 0x4,
+    MIC_PIN = 0x4,
     channel_CTMU = 0x1D,
     channel_DAC = 0x1E,
     channel_FVRBuf2 = 0x1F
