@@ -9566,9 +9566,24 @@ void main(void) {
             printf("The last 256 ADC samples from the microphone are: \r\n");
 
             for(uint8_t i = 0;i<64;i++){
-                printf("%d ",adc_reading[i]);
+                if(i % 16 == 0){
+                    printf("\r\nS[%d] ", i);
+                }
+                printf("%d ", adc_reading[i]);
             }
-            printf("\r\n");
+            printf("\r\nThe sound wave crossed at the following indices:\r\n");
+            uint8_t crossings[64];
+            uint8_t crIdx = 0;
+            for(uint8_t i = 1;i<64;i++){
+                if(adc_reading[i-1] <= 128 && adc_reading[i] > 128){
+                    crossings[crIdx] = i - 1;
+                    crIdx += 1;
+                }
+            }
+            for(uint8_t i = 0;i<crIdx;i++){
+                printf("%d ", crossings[i]);
+            }
+
         }
 
         if ((EUSART1_is_rx_ready())) {
@@ -9628,7 +9643,7 @@ void main(void) {
 
                     fillBuffer = 1;
                     break;
-# 178 "main.c"
+# 193 "main.c"
                 default:
                     printf("Unknown key %c\r\n", cmd);
                     break;
@@ -9651,7 +9666,10 @@ void myTMR0ISR(void) {
 
     uint8_t micReading = ADRESH;
 
-        ADCON0bits.GO_NOT_DONE = 1;
+
+
+
+    ADCON0bits.GO_NOT_DONE = 1;
 
 
 
@@ -9685,8 +9703,8 @@ void myTMR0ISR(void) {
 
             }
             break;
-# 243 "main.c"
-        TMR0_WriteTimer(0x10000 - 400);
+# 261 "main.c"
+        TMR0_WriteTimer(0x10000 - (400 - TMR0_ReadTimer()));
         INTCONbits.TMR0IF = 0;
 
     }

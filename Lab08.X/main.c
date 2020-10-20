@@ -77,9 +77,33 @@ void main(void) {
             printf("The last 256 ADC samples from the microphone are: \r\n");
             //Analyze samples here.
             for(uint8_t i = 0;i<NUM_SAMPLES;i++){
-                printf("%d ",adc_reading[i]);
+                if(i % 16 == 0){
+                    printf("\r\nS[%d] ", i);
+                }
+                printf("%d ", adc_reading[i]);
             }
-            printf("\r\n");
+            printf("\r\nThe sound wave crossed at the following indices:\r\n");
+            uint8_t crossings[NUM_SAMPLES];
+            uint8_t crIdx = 0;
+            for(uint8_t i = 1;i<NUM_SAMPLES;i++){
+                if(adc_reading[i-1] <= 128 && adc_reading[i] > 128){
+                    crossings[crIdx] = i - 1;
+                    crIdx += 1;
+                }
+            }
+            for(uint8_t i = 0;i<crIdx;i++){
+                printf("%d ", crossings[i]);
+            }
+            printf("\r\nThe sound wave had %d periods:\r\n", crIdx);
+            uint16_t periodSum = 0;
+            for(uint8_t i = 1;i<crIdx;i++){
+                printf("%d - %d = %d", crossings[i], crossings[i-1], crossings[i] - crossings[i-1]);
+                periodSum += crossings[i] - crossings[i-1];
+            }
+            uint16_t avgPeriod = periodSum/crIdx;
+            uint16_t avgPeriodUs = avgPeriod * 25;
+            printf("\r\n\r\naverage period = %d us", avgPeriodUs);
+            
         }
 
         if (EUSART1_DataReady) { // wait for incoming data on USART
@@ -191,7 +215,7 @@ void main(void) {
 typedef enum  {MIC_IDLE, MIC_WAIT_FOR_TRIGGER, MIC_ACQUIRE} myTMR0states_t;
 myTMR0states_t timerState = MIC_IDLE;
 
-uint8_t bufferIdx = 0;
+uint16_t bufferIdx = 0;
 void myTMR0ISR(void) {
     //Ensure that there is always something in the buffer. 
 //    while(ADCON0bits.GO_NOT_DONE == 1);
@@ -243,7 +267,7 @@ void myTMR0ISR(void) {
         //Our current issue is that the buffer instantly fills with num_samples of the same value. 
         //This may be because the ISR triggers way faster than the ADC can convert
         //But if that's the case, why were we told to make the sampling rate so low?
-        TMR0_WriteTimer(0x10000 - 400);
+        TMR0_WriteTimer(0x10000 - (400 - TMR0_ReadTimer()));
         INTCONbits.TMR0IF = 0;
         
     }
