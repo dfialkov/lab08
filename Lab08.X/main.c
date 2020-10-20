@@ -194,8 +194,13 @@ myTMR0states_t timerState = MIC_IDLE;
 uint8_t bufferIdx = 0;
 void myTMR0ISR(void) {
     //Ensure that there is always something in the buffer. 
+//    while(ADCON0bits.GO_NOT_DONE == 1);
     uint8_t micReading = ADRESH;
-        
+    //Always need something in the buffer
+    //make CERTAIN that you give this as much time as you possibly can to work.
+    //It should always be the second line of this ISR
+    //I tried to put it at the end and it broke everything. 
+    ADCON0bits.GO_NOT_DONE = 1; 
     //Each ISR will tell the ADC to take the sample now. By the next ISR, the sample should be through the ADC. 
     //This means that the data an ISR places into the buffer at a given interrupt is the data it got during the last interrupt.
     //I believe this doesn't actually cause problems?
@@ -229,10 +234,9 @@ void myTMR0ISR(void) {
                 
             }
             break;
-        //Always need something in the buffer
-        ADCON0bits.GO_NOT_DONE = 1; 
         
-        INTCONbits.TMR0IF = 0;
+        
+        
         //Need to add fudge value. I have no idea how to count the cycles.
         //We'll probably need to ask a TA.
         
@@ -240,6 +244,7 @@ void myTMR0ISR(void) {
         //This may be because the ISR triggers way faster than the ADC can convert
         //But if that's the case, why were we told to make the sampling rate so low?
         TMR0_WriteTimer(0x10000 - 400);
+        INTCONbits.TMR0IF = 0;
         
     }
     

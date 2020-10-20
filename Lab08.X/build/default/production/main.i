@@ -9568,6 +9568,7 @@ void main(void) {
             for(uint8_t i = 0;i<64;i++){
                 printf("%d ",adc_reading[i]);
             }
+            printf("\r\n");
         }
 
         if ((EUSART1_is_rx_ready())) {
@@ -9627,7 +9628,7 @@ void main(void) {
 
                     fillBuffer = 1;
                     break;
-# 176 "main.c"
+# 178 "main.c"
                 default:
                     printf("Unknown key %c\r\n", cmd);
                     break;
@@ -9647,8 +9648,10 @@ myTMR0states_t timerState = MIC_IDLE;
 uint8_t bufferIdx = 0;
 void myTMR0ISR(void) {
 
+
     uint8_t micReading = ADRESH;
 
+        ADCON0bits.GO_NOT_DONE = 1;
 
 
 
@@ -9682,13 +9685,9 @@ void myTMR0ISR(void) {
 
             }
             break;
-
-        ADCON0bits.GO_NOT_DONE = 1;
-
-        INTCONbits.TMR0IF = 0;
-
-
+# 243 "main.c"
         TMR0_WriteTimer(0x10000 - 400);
+        INTCONbits.TMR0IF = 0;
 
     }
 
