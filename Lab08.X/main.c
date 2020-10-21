@@ -43,10 +43,12 @@ void myTMR0ISR(void);
 //----------------------------------------------
 
 void main(void) {
+    //Current roadblock:
+    //Frequency always too high, even accounting for a missing fudge value.
     //Questions:
     //Why are periods so short? 
     //How do you count the cycles for the fudge value?
-    //How do you calculate the frequency with this hardware?
+    //Are periods *this* short normal? It seems like they're too short, missing fudge value or no. 
     
 
     uint16_t i;
@@ -79,7 +81,7 @@ void main(void) {
     for (;;) {
         if(samplesCollected){
             samplesCollected = false;
-            printf("The last 256 ADC samples from the microphone are: \r\n");
+            printf("The last %d ADC samples from the microphone are: \r\n", NUM_SAMPLES);
             //Analyze samples here.
             for(uint16_t i = 0;i<NUM_SAMPLES;i++){
                 if(i % 16 == 0){
@@ -108,7 +110,7 @@ void main(void) {
             uint16_t avgPeriod = periodSum/crIdx;
             uint16_t avgPeriodUs = avgPeriod * 25;
             printf("\r\naverage period = %d us\r\n", avgPeriodUs);
-            
+            printf("\r\average frequendy = %d Hz\r\n", 1000000/avgPeriodUs);
         }
 
         if (EUSART1_DataReady) { // wait for incoming data on USART
@@ -122,7 +124,7 @@ void main(void) {
                     printf("Z: Reset processor\r\n");
                     printf("z: Clear the terminal\r\n");
                     printf("T/t: Increase/decrease threshold 138-118\r\n");
-                    printf("f: gather 512 samples from the microphone and calculate the frequency\r\n");
+                    printf("f: gather %d samples from the microphone and calculate the frequency\r\n", NUM_SAMPLES);
 //                    printf("s: gather %d samples from ADC\r\n", NUM_SAMPLES);
                     printf("------------------------------\r\n");
                     break;
@@ -269,10 +271,7 @@ void myTMR0ISR(void) {
         //Need to add fudge value. I have no idea how to count the cycles.
         //We'll probably need to ask a TA.
         
-        //Our current issue is that the buffer instantly fills with num_samples of the same value. 
-        //This may be because the ISR triggers way faster than the ADC can convert
-        //But if that's the case, why were we told to make the sampling rate so low?
-        TMR0_WriteTimer(0x10000 - (400 - TMR0_ReadTimer()));
+        TMR0_WriteTimer(0x10000 - 400);
         INTCONbits.TMR0IF = 0;
         
     }

@@ -9532,7 +9532,7 @@ void myTMR0ISR(void);
 
 
 void main(void) {
-
+# 54 "main.c"
     uint16_t i;
     char cmd;
 
@@ -9563,7 +9563,7 @@ void main(void) {
     for (;;) {
         if(samplesCollected){
             samplesCollected = 0;
-            printf("The last 256 ADC samples from the microphone are: \r\n");
+            printf("The last %d ADC samples from the microphone are: \r\n", 256);
 
             for(uint16_t i = 0;i<256;i++){
                 if(i % 16 == 0){
@@ -9592,7 +9592,7 @@ void main(void) {
             uint16_t avgPeriod = periodSum/crIdx;
             uint16_t avgPeriodUs = avgPeriod * 25;
             printf("\r\naverage period = %d us\r\n", avgPeriodUs);
-
+            printf("\r\average frequendy = %d Hz\r\n", 1000000/avgPeriodUs);
         }
 
         if ((EUSART1_is_rx_ready())) {
@@ -9606,7 +9606,7 @@ void main(void) {
                     printf("Z: Reset processor\r\n");
                     printf("z: Clear the terminal\r\n");
                     printf("T/t: Increase/decrease threshold 138-118\r\n");
-                    printf("f: gather 512 samples from the microphone and calculate the frequency\r\n");
+                    printf("f: gather %d samples from the microphone and calculate the frequency\r\n", 256);
 
                     printf("------------------------------\r\n");
                     break;
@@ -9652,7 +9652,7 @@ void main(void) {
 
                     fillBuffer = 1;
                     break;
-# 202 "main.c"
+# 209 "main.c"
                 default:
                     printf("Unknown key %c\r\n", cmd);
                     break;
@@ -9712,8 +9712,13 @@ void myTMR0ISR(void) {
 
             }
             break;
-# 270 "main.c"
-        TMR0_WriteTimer(0x10000 - (400 - TMR0_ReadTimer()));
+
+
+
+
+
+
+        TMR0_WriteTimer(0x10000 - 400);
         INTCONbits.TMR0IF = 0;
 
     }
