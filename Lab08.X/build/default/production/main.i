@@ -9520,7 +9520,7 @@ uint8_t fillBuffer = 0;
 
 uint8_t samplesCollected = 0;
 
-uint8_t adc_reading[256];
+uint16_t adc_reading[256];
 
 uint16_t thresholdRange = 10;
 
@@ -9572,7 +9572,7 @@ void main(void) {
                 printf("%d ", adc_reading[i]);
             }
             printf("\r\nThe sound wave crossed at the following indices:\r\n");
-            uint8_t crossings[256/2];
+            uint16_t crossings[256/2];
             uint16_t crIdx = 0;
             for(uint16_t i = 1;i<256;i++){
                 if(adc_reading[i-1] <= 128 && adc_reading[i] > 128){
@@ -9592,7 +9592,7 @@ void main(void) {
 
 
             uint16_t periodSumUs = periodSum * 25;
-            uint16_t avgPeriodUs = periodSumUs/(crIdx-1);
+            uint16_t avgPeriodUs = periodSumUs/(crIdx -1 );
             printf("\r\naverage period = %d us\r\n", avgPeriodUs);
             printf("\r\naverage frequendy = %d Hz\r\n", 1000000/avgPeriodUs);
         }
@@ -9675,7 +9675,7 @@ uint16_t bufferIdx = 0;
 void myTMR0ISR(void) {
 
 
-    uint8_t micReading = ADRESH;
+    uint16_t micReading = ADRESH;
 
 
 
@@ -9720,12 +9720,12 @@ void myTMR0ISR(void) {
 
 
 
-        TMR0_WriteTimer(0x10000 - 400);
-        INTCONbits.TMR0IF = 0;
 
     }
 
 
+        INTCONbits.TMR0IF = 0;
+        TMR0_WriteTimer(0x10000 - (350 - TMR0_ReadTimer()));
 
 
 

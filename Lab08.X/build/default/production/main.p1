@@ -85,6 +85,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12966 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 12966: extern volatile unsigned char ADRESH __attribute__((address(0xFC4)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
+"197 ./mcc_generated_files/tmr0.h
+[; ;./mcc_generated_files/tmr0.h: 197: uint16_t TMR0_ReadTimer(void);
+[v _TMR0_ReadTimer `(us ~T0 @X0 0 ef ]
 "54 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC18F-K_DFP/1.4.87/xc8\pic\include\proc\pic18f26k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -835,7 +838,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "34
-[v _adc_reading `uc ~T0 @X0 -> 256 `i e ]
+[v _adc_reading `us ~T0 @X0 -> 256 `i e ]
 "36
 [v _thresholdRange `us ~T0 @X0 1 e ]
 [i _thresholdRange
@@ -937,7 +940,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 848 ]
 "90
 [; ;main.c: 90:                 printf("%d ", adc_reading[i]);
-[e ( _printf , (. :s 7C -> *U + &U _adc_reading * -> _i `ux -> -> # *U &U _adc_reading `ui `ux `i ]
+[e ( _printf , (. :s 7C -> *U + &U _adc_reading * -> _i `ux -> -> # *U &U _adc_reading `ui `ux `ui ]
 "91
 [; ;main.c: 91:             }
 }
@@ -949,8 +952,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 92:             printf("\r\nThe sound wave crossed at the following indices:\r\n");
 [e ( _printf :s 8C ]
 "93
-[; ;main.c: 93:             uint8_t crossings[256/2];
-[v _crossings `uc ~T0 @X0 -> 128 `i a ]
+[; ;main.c: 93:             uint16_t crossings[256/2];
+[v _crossings `us ~T0 @X0 -> 128 `i a ]
 "94
 [; ;main.c: 94:             uint16_t crIdx = 0;
 [v _crIdx `us ~T0 @X0 1 a ]
@@ -966,11 +969,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "96
 [; ;main.c: 96:                 if(adc_reading[i-1] <= 128 && adc_reading[i] > 128){
-[e $ ! && <= -> *U + &U _adc_reading * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _adc_reading `ui `ux `i -> 128 `i > -> *U + &U _adc_reading * -> _i `ux -> -> # *U &U _adc_reading `ui `ux `i -> 128 `i 852  ]
+[e $ ! && <= -> *U + &U _adc_reading * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _adc_reading `ui `ux `ui -> -> 128 `i `ui > -> *U + &U _adc_reading * -> _i `ux -> -> # *U &U _adc_reading `ui `ux `ui -> -> 128 `i `ui 852  ]
 {
 "97
 [; ;main.c: 97:                     crossings[crIdx] = i - 1;
-[e = *U + &U _crossings * -> _crIdx `ux -> -> # *U &U _crossings `ui `ux -> - -> _i `ui -> -> 1 `i `ui `uc ]
+[e = *U + &U _crossings * -> _crIdx `ux -> -> # *U &U _crossings `ui `ux -> - -> _i `ui -> -> 1 `i `ui `us ]
 "98
 [; ;main.c: 98:                     crIdx += 1;
 [e =+ _crIdx -> -> 1 `i `us ]
@@ -995,7 +998,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "102
 [; ;main.c: 102:                 printf("%d ", crossings[i]);
-[e ( _printf , (. :s 9C -> *U + &U _crossings * -> _i `ux -> -> # *U &U _crossings `ui `ux `i ]
+[e ( _printf , (. :s 9C -> *U + &U _crossings * -> _i `ux -> -> # *U &U _crossings `ui `ux `ui ]
 "103
 [; ;main.c: 103:             }
 }
@@ -1021,10 +1024,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "107
 [; ;main.c: 107:                 printf("%d - %d = %d\r\n", crossings[i], crossings[i-1], crossings[i] - crossings[i-1]);
-[e ( _printf , , , (. :s 11C -> *U + &U _crossings * -> _i `ux -> -> # *U &U _crossings `ui `ux `i -> *U + &U _crossings * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _crossings `ui `ux `i - -> *U + &U _crossings * -> _i `ux -> -> # *U &U _crossings `ui `ux `i -> *U + &U _crossings * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _crossings `ui `ux `i ]
+[e ( _printf , , , (. :s 11C -> *U + &U _crossings * -> _i `ux -> -> # *U &U _crossings `ui `ux `ui -> *U + &U _crossings * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _crossings `ui `ux `ui - -> *U + &U _crossings * -> _i `ux -> -> # *U &U _crossings `ui `ux `ui -> *U + &U _crossings * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _crossings `ui `ux `ui ]
 "108
 [; ;main.c: 108:                 periodSum += crossings[i] - crossings[i-1];
-[e =+ _periodSum -> - -> *U + &U _crossings * -> _i `ux -> -> # *U &U _crossings `ui `ux `i -> *U + &U _crossings * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _crossings `ui `ux `i `us ]
+[e =+ _periodSum -> - -> *U + &U _crossings * -> _i `ux -> -> # *U &U _crossings `ui `ux `ui -> *U + &U _crossings * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _crossings `ui `ux `ui `us ]
 "109
 [; ;main.c: 109:             }
 }
@@ -1038,7 +1041,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _periodSumUs `us ~T0 @X0 1 a ]
 [e = _periodSumUs -> * -> _periodSum `ui -> -> 25 `i `ui `us ]
 "113
-[; ;main.c: 113:             uint16_t avgPeriodUs = periodSumUs/(crIdx-1);
+[; ;main.c: 113:             uint16_t avgPeriodUs = periodSumUs/(crIdx -1 );
 [v _avgPeriodUs `us ~T0 @X0 1 a ]
 [e = _avgPeriodUs -> / -> _periodSumUs `ui - -> _crIdx `ui -> -> 1 `i `ui `us ]
 "114
@@ -1251,9 +1254,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _myTMR0ISR ]
 [f ]
 "231
-[; ;main.c: 231:     uint8_t micReading = ADRESH;
-[v _micReading `uc ~T0 @X0 1 a ]
-[e = _micReading _ADRESH ]
+[; ;main.c: 231:     uint16_t micReading = ADRESH;
+[v _micReading `us ~T0 @X0 1 a ]
+[e = _micReading -> _ADRESH `us ]
 "236
 [; ;main.c: 236:     ADCON0bits.GO_NOT_DONE = 1;
 [e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
@@ -1333,14 +1336,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "269
 [; ;main.c: 269:             break;
 [e $U 881  ]
-"276
-[; ;main.c: 276:         TMR0_WriteTimer(0x10000 - 400);
-[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> -> 400 `i `l `us ]
 "277
-[; ;main.c: 277:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"279
-[; ;main.c: 279:     }
+[; ;main.c: 277:     }
 }
 [e $U 881  ]
 [e :U 882 ]
@@ -1349,6 +1346,12 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E6168 2 `ui 887
  881 ]
 [e :U 881 ]
+"280
+[; ;main.c: 280:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"281
+[; ;main.c: 281:         TMR0_WriteTimer(0x10000 - (350 - TMR0_ReadTimer()));
+[e ( _TMR0_WriteTimer (1 -> - -> 65536 `l -> - -> -> 350 `i `ui -> ( _TMR0_ReadTimer ..  `ui `l `us ]
 "285
 [; ;main.c: 285: }
 [e :UE 880 ]

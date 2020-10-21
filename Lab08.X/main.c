@@ -31,7 +31,7 @@ uint8_t fillBuffer = false;
 
 uint8_t samplesCollected = false;
 
-uint8_t adc_reading[NUM_SAMPLES];
+uint16_t adc_reading[NUM_SAMPLES];
 
 uint16_t thresholdRange = 10;
 
@@ -90,7 +90,7 @@ void main(void) {
                 printf("%d ", adc_reading[i]);
             }
             printf("\r\nThe sound wave crossed at the following indices:\r\n");
-            uint8_t crossings[NUM_SAMPLES/2];
+            uint16_t crossings[NUM_SAMPLES/2];
             uint16_t crIdx = 0;
             for(uint16_t i = 1;i<NUM_SAMPLES;i++){
                 if(adc_reading[i-1] <= 128 && adc_reading[i] > 128){
@@ -110,7 +110,7 @@ void main(void) {
             //Instructions specifically say to do it this way. No idea why.
             //Probably something to do with overflows.
             uint16_t periodSumUs = periodSum * 25;
-            uint16_t avgPeriodUs = periodSumUs/(crIdx-1);
+            uint16_t avgPeriodUs = periodSumUs/(crIdx -1 );
             printf("\r\naverage period = %d us\r\n", avgPeriodUs);
             printf("\r\naverage frequendy = %d Hz\r\n", 1000000/avgPeriodUs);
         }
@@ -228,7 +228,7 @@ uint16_t bufferIdx = 0;
 void myTMR0ISR(void) {
     //Ensure that there is always something in the buffer. 
 //    while(ADCON0bits.GO_NOT_DONE == 1);
-    uint8_t micReading = ADRESH;
+    uint16_t micReading = ADRESH;
     //Always need something in the buffer
     //make CERTAIN that you give this as much time as you possibly can to work.
     //It should always be the second line of this ISR
@@ -273,12 +273,12 @@ void myTMR0ISR(void) {
         //Need to add fudge value. I have no idea how to count the cycles.
         //We'll probably need to ask a TA.
         
-        TMR0_WriteTimer(0x10000 - 400);
-        INTCONbits.TMR0IF = 0;
         
     }
     
 
+        INTCONbits.TMR0IF = 0;
+        TMR0_WriteTimer(0x10000 - (350 - TMR0_ReadTimer()));
     
     
 

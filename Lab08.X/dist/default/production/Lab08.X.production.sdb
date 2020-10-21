@@ -111,6 +111,8 @@ channel_FVRBuf2 31
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "67 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"109
+[v _TMR0_ReadTimer TMR0_ReadTimer `(us  1 e 2 0 ]
 "122
 [v _TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
 [v i2_TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
@@ -142,7 +144,7 @@ channel_FVRBuf2 31
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "8267
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
-[s S569 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S573 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -151,16 +153,16 @@ channel_FVRBuf2 31
 `uc 1 ADIF 1 0 :1:6 
 ]
 "8716
-[s S577 . 1 `uc 1 . 1 0 :3:0 
+[s S581 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S582 . 1 `S569 1 . 1 0 `S577 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES582  1 e 1 @3998 ]
+[u S586 . 1 `S573 1 . 1 0 `S581 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES586  1 e 1 @3998 ]
 "9582
 [v _RCSTA1 RCSTA1 `VEuc  1 e 1 @4011 ]
-[s S648 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S652 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -170,10 +172,10 @@ channel_FVRBuf2 31
 `uc 1 SPEN 1 0 :1:7 
 ]
 "9635
-[s S657 . 1 `uc 1 . 1 0 :3:0 
+[s S661 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S660 . 1 `uc 1 RX9D1 1 0 :1:0 
+[s S664 . 1 `uc 1 RX9D1 1 0 :1:0 
 `uc 1 OERR1 1 0 :1:1 
 `uc 1 FERR1 1 0 :1:2 
 `uc 1 ADDEN1 1 0 :1:3 
@@ -182,21 +184,21 @@ channel_FVRBuf2 31
 `uc 1 RX91 1 0 :1:6 
 `uc 1 SPEN1 1 0 :1:7 
 ]
-[s S669 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S673 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S673 . 1 `uc 1 . 1 0 :6:0 
+[s S677 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S676 . 1 `uc 1 . 1 0 :5:0 
+[s S680 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S679 . 1 `S648 1 . 1 0 `S657 1 . 1 0 `S660 1 . 1 0 `S669 1 . 1 0 `S673 1 . 1 0 `S676 1 . 1 0 ]
-[v _RCSTA1bits RCSTA1bits `VES679  1 e 1 @4011 ]
+[u S683 . 1 `S652 1 . 1 0 `S661 1 . 1 0 `S664 1 . 1 0 `S673 1 . 1 0 `S677 1 . 1 0 `S680 1 . 1 0 ]
+[v _RCSTA1bits RCSTA1bits `VES683  1 e 1 @4011 ]
 "10038
 [v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4012 ]
-[s S599 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S603 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -206,7 +208,7 @@ channel_FVRBuf2 31
 `uc 1 CSRC 1 0 :1:7 
 ]
 "10079
-[s S608 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S612 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 SENDB1 1 0 :1:3 
@@ -215,12 +217,12 @@ channel_FVRBuf2 31
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[s S617 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S621 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S621 . 1 `S599 1 . 1 0 `S608 1 . 1 0 `S617 1 . 1 0 ]
-[v _TXSTA1bits TXSTA1bits `VES621  1 e 1 @4012 ]
+[u S625 . 1 `S603 1 . 1 0 `S612 1 . 1 0 `S621 1 . 1 0 ]
+[v _TXSTA1bits TXSTA1bits `VES625  1 e 1 @4012 ]
 "10413
 [v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
 "10491
@@ -274,22 +276,22 @@ channel_FVRBuf2 31
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "12966
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-[s S781 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S785 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "15074
-[s S783 . 1 `uc 1 . 1 0 :1:0 
+[s S787 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S786 . 1 `uc 1 . 1 0 :2:0 
+[s S790 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S789 . 1 `uc 1 . 1 0 :3:0 
+[s S793 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S792 . 1 `uc 1 . 1 0 :4:0 
+[s S796 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S795 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S799 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -298,21 +300,21 @@ channel_FVRBuf2 31
 `uc 1 SBOREN 1 0 :1:6 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S804 . 1 `uc 1 BOR 1 0 :1:0 
+[s S808 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S810 . 1 `S781 1 . 1 0 `S783 1 . 1 0 `S786 1 . 1 0 `S789 1 . 1 0 `S792 1 . 1 0 `S795 1 . 1 0 `S804 1 . 1 0 ]
-[v _RCONbits RCONbits `VES810  1 e 1 @4048 ]
+[u S814 . 1 `S785 1 . 1 0 `S787 1 . 1 0 `S790 1 . 1 0 `S793 1 . 1 0 `S796 1 . 1 0 `S799 1 . 1 0 `S808 1 . 1 0 ]
+[v _RCONbits RCONbits `VES814  1 e 1 @4048 ]
 "15192
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
 "15249
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "15332
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S334 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S338 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -320,21 +322,21 @@ channel_FVRBuf2 31
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "15352
-[s S341 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S345 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 ]
-[u S345 . 1 `S334 1 . 1 0 `S341 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES345  1 e 1 @4053 ]
+[u S349 . 1 `S338 1 . 1 0 `S345 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES349  1 e 1 @4053 ]
 "15409
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "15429
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S261 . 1 `uc 1 . 1 0 :7:0 
+[s S265 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "16084
-[s S264 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S268 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -343,11 +345,11 @@ channel_FVRBuf2 31
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S273 . 1 `uc 1 . 1 0 :7:0 
+[s S277 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S276 . 1 `S261 1 . 1 0 `S264 1 . 1 0 `S273 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES276  1 e 1 @4081 ]
+[u S280 . 1 `S265 1 . 1 0 `S268 1 . 1 0 `S277 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES280  1 e 1 @4081 ]
 [s S33 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -388,21 +390,21 @@ channel_FVRBuf2 31
 "32
 [v _samplesCollected samplesCollected `uc  1 e 1 0 ]
 "34
-[v _adc_reading adc_reading `[256]uc  1 e 256 0 ]
+[v _adc_reading adc_reading `[256]us  1 e 512 0 ]
 "36
 [v _thresholdRange thresholdRange `us  1 e 2 0 ]
 "225
 [v _timerState timerState `E6168  1 e 1 0 ]
 "227
 [v _bufferIdx bufferIdx `us  1 e 2 0 ]
-[s S523 . 1 `uc 1 perr 1 0 :1:0 
+[s S527 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "52 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/eusart1.c
-[u S528 . 1 `S523 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusart1RxLastError eusart1RxLastError `VES528  1 e 1 0 ]
+[u S532 . 1 `S527 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusart1RxLastError eusart1RxLastError `VES532  1 e 1 0 ]
 "58
 [v _EUSART1_FramingErrorHandler EUSART1_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "59
@@ -417,163 +419,163 @@ channel_FVRBuf2 31
 [v _main main `(v  1 e 1 0 ]
 {
 "106
-[v main@i_225 i `us  1 a 2 145 ]
+[v main@i_229 i `us  1 a 2 90 ]
 "101
-[v main@i_221 i `us  1 a 2 135 ]
+[v main@i_225 i `us  1 a 2 80 ]
 "95
-[v main@i_220 i `us  1 a 2 143 ]
+[v main@i_224 i `us  1 a 2 88 ]
 "86
-[v main@i_214 i `us  1 a 2 139 ]
+[v main@i_218 i `us  1 a 2 84 ]
 "93
-[v main@crossings crossings `[128]uc  1 a 128 0 ]
+[v main@crossings crossings `[128]us  1 a 256 0 ]
 "94
-[v main@crIdx crIdx `us  1 a 2 141 ]
+[v main@crIdx crIdx `us  1 a 2 86 ]
 "113
-[v main@avgPeriodUs avgPeriodUs `us  1 a 2 132 ]
+[v main@avgPeriodUs avgPeriodUs `us  1 a 2 77 ]
 "105
-[v main@periodSum periodSum `us  1 a 2 130 ]
+[v main@periodSum periodSum `us  1 a 2 75 ]
 "112
-[v main@periodSumUs periodSumUs `us  1 a 2 128 ]
+[v main@periodSumUs periodSumUs `us  1 a 2 73 ]
 "54
-[v main@i i `us  1 a 2 137 ]
+[v main@i i `us  1 a 2 82 ]
 "55
-[v main@cmd cmd `uc  1 a 1 134 ]
+[v main@cmd cmd `uc  1 a 1 79 ]
 "218
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.39v  1 a 2 43 ]
+[v printf@ap ap `[1]*.39v  1 a 2 59 ]
 "5
-[v printf@fmt fmt `*.32Cuc  1 p 2 33 ]
+[v printf@fmt fmt `*.32Cuc  1 p 2 49 ]
 "13
 } 0
 "1390 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1393
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 66 ]
-[s S1349 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.32uc  1 a 2 47 ]
+[s S1353 _IO_FILE 0 ]
 "1390
-[v vfprintf@fp fp `*.2S1349  1 p 2 27 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 29 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 31 ]
+[v vfprintf@fp fp `*.2S1353  1 p 2 41 ]
+[v vfprintf@fmt fmt `*.32Cuc  1 p 2 43 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 45 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
 "696
-[v vfpfcnvrt@ll ll `o  1 a 8 18 ]
+[v vfpfcnvrt@ll ll `o  1 a 8 32 ]
 "694
-[v vfpfcnvrt@c c `uc  1 a 1 26 ]
-[s S1349 _IO_FILE 0 ]
+[v vfpfcnvrt@c c `uc  1 a 1 40 ]
+[s S1353 _IO_FILE 0 ]
 "692
-[v vfpfcnvrt@fp fp `*.2S1349  1 p 2 58 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 60 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 62 ]
+[v vfpfcnvrt@fp fp `*.2S1353  1 p 2 26 ]
+[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 28 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 30 ]
 "1387
 } 0
 "287
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
 "290
-[v dtoa@n n `o  1 a 8 8 ]
+[v dtoa@n n `o  1 a 8 16 ]
 "289
-[v dtoa@i i `i  1 a 2 16 ]
-[v dtoa@s s `i  1 a 2 6 ]
-[v dtoa@w w `i  1 a 2 4 ]
-[v dtoa@p p `i  1 a 2 2 ]
-[s S1349 _IO_FILE 0 ]
+[v dtoa@i i `i  1 a 2 24 ]
+[v dtoa@s s `i  1 a 2 14 ]
+[v dtoa@w w `i  1 a 2 12 ]
+[v dtoa@p p `i  1 a 2 10 ]
+[s S1353 _IO_FILE 0 ]
 "287
-[v dtoa@fp fp `*.2S1349  1 p 2 40 ]
-[v dtoa@d d `o  1 p 8 42 ]
+[v dtoa@fp fp `*.2S1353  1 p 2 47 ]
+[v dtoa@d d `o  1 p 8 49 ]
 "328
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
 "74
-[v pad@w w `i  1 a 2 38 ]
-[v pad@i i `i  1 a 2 36 ]
-[s S1349 _IO_FILE 0 ]
+[v pad@w w `i  1 a 2 45 ]
+[v pad@i i `i  1 a 2 43 ]
+[s S1353 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S1349  1 p 2 29 ]
-[v pad@buf buf `*.39uc  1 p 2 31 ]
-[v pad@p p `i  1 p 2 33 ]
+[v pad@fp fp `*.2S1353  1 p 2 36 ]
+[v pad@buf buf `*.39uc  1 p 2 38 ]
+[v pad@p p `i  1 p 2 40 ]
 "95
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
 "7
-[v strlen@a a `*.39Cuc  1 a 2 13 ]
+[v strlen@a a `*.39Cuc  1 a 2 20 ]
 "5
-[v strlen@s s `*.39Cuc  1 p 2 11 ]
+[v strlen@s s `*.39Cuc  1 p 2 18 ]
 "12
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
 {
 "11
-[v fputs@i i `i  1 a 2 27 ]
+[v fputs@i i `i  1 a 2 34 ]
 "10
-[v fputs@c c `uc  1 a 1 26 ]
+[v fputs@c c `uc  1 a 1 33 ]
 "8
-[v fputs@s s `*.39Cuc  1 p 2 22 ]
-[s S1332 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1332  1 p 2 24 ]
+[v fputs@s s `*.39Cuc  1 p 2 29 ]
+[s S1336 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1336  1 p 2 31 ]
 "19
 } 0
 "1 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
 {
-[v abs@a a `i  1 p 2 29 ]
+[v abs@a a `i  1 p 2 36 ]
 "4
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\aomod.c
 [v ___aomod __aomod `(o  1 e 8 0 ]
 {
 "12
-[v ___aomod@sign sign `uc  1 a 1 28 ]
-[v ___aomod@counter counter `uc  1 a 1 27 ]
+[v ___aomod@sign sign `uc  1 a 1 35 ]
+[v ___aomod@counter counter `uc  1 a 1 34 ]
 "9
-[v ___aomod@dividend dividend `o  1 p 8 11 ]
-[v ___aomod@divisor divisor `o  1 p 8 19 ]
+[v ___aomod@dividend dividend `o  1 p 8 18 ]
+[v ___aomod@divisor divisor `o  1 p 8 26 ]
 "36
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\aodiv.c
 [v ___aodiv __aodiv `(o  1 e 8 0 ]
 {
 "12
-[v ___aodiv@quotient quotient `o  1 a 8 29 ]
+[v ___aodiv@quotient quotient `o  1 a 8 36 ]
 "13
-[v ___aodiv@sign sign `uc  1 a 1 28 ]
-[v ___aodiv@counter counter `uc  1 a 1 27 ]
+[v ___aodiv@sign sign `uc  1 a 1 35 ]
+[v ___aodiv@counter counter `uc  1 a 1 34 ]
 "9
-[v ___aodiv@dividend dividend `o  1 p 8 11 ]
-[v ___aodiv@divisor divisor `o  1 p 8 19 ]
+[v ___aodiv@dividend dividend `o  1 p 8 18 ]
+[v ___aodiv@divisor divisor `o  1 p 8 26 ]
 "43
 } 0
 "259 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c
 [v _ctoa ctoa `(i  1 s 2 ctoa ]
 {
 "261
-[v ctoa@w w `i  1 a 2 28 ]
-[v ctoa@l l `i  1 a 2 26 ]
-[s S1349 _IO_FILE 0 ]
+[v ctoa@w w `i  1 a 2 35 ]
+[v ctoa@l l `i  1 a 2 33 ]
+[s S1353 _IO_FILE 0 ]
 "259
-[v ctoa@fp fp `*.2S1349  1 p 2 22 ]
-[v ctoa@c c `uc  1 p 1 24 ]
+[v ctoa@fp fp `*.2S1353  1 p 2 29 ]
+[v ctoa@c c `uc  1 p 1 31 ]
 "283
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
-[v fputc@c c `i  1 p 2 13 ]
-[s S1332 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1332  1 p 2 15 ]
+[v fputc@c c `i  1 p 2 20 ]
+[s S1336 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1336  1 p 2 22 ]
 "24
 } 0
 "146 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/eusart1.c
@@ -582,7 +584,7 @@ channel_FVRBuf2 31
 [v putch@txData txData `uc  1 a 1 wreg ]
 [v putch@txData txData `uc  1 a 1 wreg ]
 "148
-[v putch@txData txData `uc  1 a 1 12 ]
+[v putch@txData txData `uc  1 a 1 19 ]
 "149
 } 0
 "132
@@ -590,48 +592,48 @@ channel_FVRBuf2 31
 {
 [v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
 [v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART1_Write@txData txData `uc  1 a 1 11 ]
+[v EUSART1_Write@txData txData `uc  1 a 1 18 ]
 "139
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 15 ]
+[v ___wmul@product product `ui  1 a 2 22 ]
 "15
-[v ___wmul@multiplier multiplier `ui  1 p 2 11 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 13 ]
+[v ___wmul@multiplier multiplier `ui  1 p 2 18 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 20 ]
 "53
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
-[v ___lwdiv@quotient quotient `ui  1 a 2 15 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 23 ]
 "11
-[v ___lwdiv@counter counter `uc  1 a 1 17 ]
+[v ___lwdiv@counter counter `uc  1 a 1 22 ]
 "7
-[v ___lwdiv@dividend dividend `ui  1 p 2 11 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 13 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 18 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 20 ]
 "30
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 {
 "10
-[v ___aldiv@quotient quotient `l  1 a 4 21 ]
+[v ___aldiv@quotient quotient `l  1 a 4 28 ]
 "11
-[v ___aldiv@sign sign `uc  1 a 1 20 ]
-[v ___aldiv@counter counter `uc  1 a 1 19 ]
+[v ___aldiv@sign sign `uc  1 a 1 27 ]
+[v ___aldiv@counter counter `uc  1 a 1 26 ]
 "7
-[v ___aldiv@dividend dividend `l  1 p 4 11 ]
-[v ___aldiv@divisor divisor `l  1 p 4 15 ]
+[v ___aldiv@dividend dividend `l  1 p 4 18 ]
+[v ___aldiv@divisor divisor `l  1 p 4 22 ]
 "41
 } 0
 "122 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/tmr0.c
 [v _TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
 {
-[v TMR0_WriteTimer@timerVal timerVal `us  1 p 2 11 ]
+[v TMR0_WriteTimer@timerVal timerVal `us  1 p 2 18 ]
 "127
 } 0
 "50 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/mcc.c
@@ -647,7 +649,7 @@ channel_FVRBuf2 31
 "156
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 11 ]
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 18 ]
 "158
 } 0
 "55 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/pin_manager.c
@@ -673,19 +675,19 @@ channel_FVRBuf2 31
 "170
 [v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 11 ]
+[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 18 ]
 "172
 } 0
 "166
 [v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 11 ]
+[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 18 ]
 "168
 } 0
 "174
 [v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 11 ]
+[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 18 ]
 "176
 } 0
 "62 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/adc.c
@@ -722,12 +724,23 @@ channel_FVRBuf2 31
 [v _myTMR0ISR myTMR0ISR `(v  1 e 1 0 ]
 {
 "231
-[v myTMR0ISR@micReading micReading `uc  1 a 1 6 ]
+[v myTMR0ISR@micReading micReading `us  1 a 2 12 ]
 "285
 } 0
 "122 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/tmr0.c
 [v i2_TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
 {
-[v i2TMR0_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+[v i2TMR0_WriteTimer@timerVal timerVal `us  1 p 2 8 ]
 "127
+} 0
+"109
+[v _TMR0_ReadTimer TMR0_ReadTimer `(us  1 e 2 0 ]
+{
+"111
+[v TMR0_ReadTimer@readVal readVal `us  1 a 2 4 ]
+"113
+[v TMR0_ReadTimer@readValHigh readValHigh `uc  1 a 1 7 ]
+"112
+[v TMR0_ReadTimer@readValLow readValLow `uc  1 a 1 6 ]
+"120
 } 0
