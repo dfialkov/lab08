@@ -107,8 +107,8 @@ void main(void) {
                 printf("%d - %d = %d\r\n", crossings[i], crossings[i-1], crossings[i] - crossings[i-1]);
                 periodSum += crossings[i] - crossings[i-1];
             }
-            uint16_t avgPeriod = periodSum/crIdx;
-            uint16_t avgPeriodUs = avgPeriod * 25;
+            uint16_t periodSumUs = periodSum * 25;
+            uint16_t avgPeriodUs = periodSumUs/(crIdx-1);
             printf("\r\naverage period = %d us\r\n", avgPeriodUs);
             printf("\r\average frequendy = %d Hz\r\n", 1000000/avgPeriodUs);
         }
