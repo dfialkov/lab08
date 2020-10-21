@@ -61,9 +61,9 @@ intcode CODE 0 8 8 46 1
 idataBANK1 CODE 0 16D2 16D2 2 1
 dataBANK1 BANK1 1 193 193 2 1
 bssCOMRAM COMRAM 1 45 45 C 1
-mediumconst MEDIUMCONST 0 FDD2 FDD2 22E 1
+mediumconst MEDIUMCONST 0 FDD0 FDD0 230 1
 config CONFIG 4 300000 300000 E 1
-$C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+$C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 idloc IDLOC 5 200000 200000 8 1
 init CODE 0 4E 4E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -88,11 +88,11 @@ BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-7 1
-CONST 16D6-FDD1 1
+CONST 16D6-FDCF 1
 STACK 300-F37 1
-SMALLCONST 16D6-FDD1 1
+SMALLCONST 16D6-FDCF 1
 CODE 4-7 1
-CODE 16D6-FDD1 1
+CODE 16D6-FDCF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -105,7 +105,7 @@ BIGRAM 196-1FF 1
 BIGRAM 300-F37 1
 COMRAM 52-5F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 16D6-FDD1 1
+MEDIUMCONST 16D6-FDCF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -120,7 +120,7 @@ MEDIUMCONST 16D6-FDD1 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab08.X.production.o
-8 intcode CODE >10788:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
+8 intcode CODE >10789:C:\Users\fialk\AppData\Local\Temp\sov4x.s
 8 intcode CODE >58:C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/interrupt_manager.c
 1A intcode CODE >61:C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/interrupt_manager.c
 36 intcode CODE >63:C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/interrupt_manager.c
@@ -531,47 +531,47 @@ F6 text0 CODE >86:C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
 62E text0 CODE >212:C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
 640 text0 CODE >213:C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
 644 text0 CODE >214:C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
-13B4 cinit CODE >4350:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13B4 cinit CODE >4352:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13B4 cinit CODE >4355:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13B4 cinit CODE >4428:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13B6 cinit CODE >4429:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13B8 cinit CODE >4430:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13BA cinit CODE >4431:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13BC cinit CODE >4432:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13BE cinit CODE >4433:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13C0 cinit CODE >4434:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13C2 cinit CODE >4435:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13C6 cinit CODE >4436:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13C8 cinit CODE >4437:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13CC cinit CODE >4441:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13D0 cinit CODE >4442:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13D4 cinit CODE >4443:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13D4 cinit CODE >4444:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13D6 cinit CODE >4445:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13D8 cinit CODE >4446:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13DA cinit CODE >4447:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13DC cinit CODE >4448:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13DE cinit CODE >4449:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13E0 cinit CODE >4452:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13E2 cinit CODE >4453:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13E4 cinit CODE >4456:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13E8 cinit CODE >4457:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13EA cinit CODE >4458:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13EA cinit CODE >4459:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13EC cinit CODE >4460:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13EE cinit CODE >4461:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13F0 cinit CODE >4464:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13F4 cinit CODE >4465:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13F6 cinit CODE >4466:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13F6 cinit CODE >4467:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13F8 cinit CODE >4468:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13FA cinit CODE >4469:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13FC cinit CODE >4475:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13FC cinit CODE >4477:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-13FE cinit CODE >4478:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-1400 cinit CODE >4479:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
-1402 cinit CODE >4480:C:\Users\fialk\AppData\Local\Temp\sd3cx.s
+13B4 cinit CODE >4351:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13B4 cinit CODE >4353:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13B4 cinit CODE >4356:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13B4 cinit CODE >4429:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13B6 cinit CODE >4430:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13B8 cinit CODE >4431:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13BA cinit CODE >4432:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13BC cinit CODE >4433:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13BE cinit CODE >4434:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13C0 cinit CODE >4435:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13C2 cinit CODE >4436:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13C6 cinit CODE >4437:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13C8 cinit CODE >4438:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13CC cinit CODE >4442:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13D0 cinit CODE >4443:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13D4 cinit CODE >4444:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13D4 cinit CODE >4445:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13D6 cinit CODE >4446:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13D8 cinit CODE >4447:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13DA cinit CODE >4448:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13DC cinit CODE >4449:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13DE cinit CODE >4450:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13E0 cinit CODE >4453:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13E2 cinit CODE >4454:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13E4 cinit CODE >4457:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13E8 cinit CODE >4458:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13EA cinit CODE >4459:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13EA cinit CODE >4460:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13EC cinit CODE >4461:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13EE cinit CODE >4462:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13F0 cinit CODE >4465:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13F4 cinit CODE >4466:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13F6 cinit CODE >4467:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13F6 cinit CODE >4468:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13F8 cinit CODE >4469:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13FA cinit CODE >4470:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13FC cinit CODE >4476:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13FC cinit CODE >4478:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+13FE cinit CODE >4479:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+1400 cinit CODE >4480:C:\Users\fialk\AppData\Local\Temp\sov4x.s
+1402 cinit CODE >4481:C:\Users\fialk\AppData\Local\Temp\sov4x.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -585,7 +585,7 @@ F6 text0 CODE >86:C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 __LdataBANK1 0 0 ABS 0 dataBANK1 dist/default/production\Lab08.X.production.o
-__Lmediumconst FDD2 0 MEDIUMCONST 0 mediumconst dist/default/production\Lab08.X.production.o
+__Lmediumconst FDD0 0 MEDIUMCONST 0 mediumconst dist/default/production\Lab08.X.production.o
 __Hspace_0 10000 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __Hspace_1 300 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
@@ -593,7 +593,7 @@ __Hspace_4 60000E 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __HidataBANK1 0 0 ABS 0 idataBANK1 dist/default/production\Lab08.X.production.o
 EUSART1_SetErrorHandler@interruptHandler C 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Lab08.X.production.o
-__mediumconst FDD2 0 MEDIUMCONST 0 mediumconst C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+__mediumconst FDD0 0 MEDIUMCONST 0 mediumconst C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 _EUSART1_Initialize 148A 0 CODE 0 text25 dist/default/production\Lab08.X.production.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Lab08.X.production.o
 __end_of_INTERRUPT_Initialize 16D2 0 CODE 0 text24 dist/default/production\Lab08.X.production.o
@@ -607,7 +607,7 @@ _LATA F89 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _LATB F8A 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _LATC F8B 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _WPUB F61 0 ABS 0 - dist/default/production\Lab08.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+___sp 0 0 STACK 2 stack C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 _ctoa 10B0 0 CODE 0 text11 dist/default/production\Lab08.X.production.o
 _dbuf A6 0 BANK0 1 bssBANK0 dist/default/production\Lab08.X.production.o
 _dtoa 69C 0 CODE 0 text4 dist/default/production\Lab08.X.production.o
@@ -619,7 +619,7 @@ btemp 51 0 COMRAM 1 temp dist/default/production\Lab08.X.production.o
 pad@i 25 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
 pad@p 22 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
 pad@w 27 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
-start 4E 0 CODE 0 init C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+start 4E 0 CODE 0 init C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 ___aomod@counter 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
 _TMR0_InterruptHandler A3 0 BANK0 1 bssBANK0 dist/default/production\Lab08.X.production.o
 __size_of___aldiv 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
@@ -645,11 +645,11 @@ ttemp7 59 0 COMRAM 1 temp dist/default/production\Lab08.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 TMR0_SetInterruptHandler@InterruptHandler C 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
-intlevel0 0 0 CODE 0 text C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
-intlevel1 0 0 CODE 0 text C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
-intlevel2 0 0 CODE 0 text C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
-intlevel3 0 0 CODE 0 text C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+__accesstop 60 0 ABS 0 - C:\Users\fialk\AppData\Local\Temp\sov4xd.o
+intlevel0 0 0 CODE 0 text C:\Users\fialk\AppData\Local\Temp\sov4xd.o
+intlevel1 0 0 CODE 0 text C:\Users\fialk\AppData\Local\Temp\sov4xd.o
+intlevel2 0 0 CODE 0 text C:\Users\fialk\AppData\Local\Temp\sov4xd.o
+intlevel3 0 0 CODE 0 text C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 __size_of_EUSART1_SetErrorHandler 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Lab08.X.production.o
 __size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
@@ -673,8 +673,8 @@ _ANSELA F38 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _ANSELB F39 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _ANSELC F3A 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _TMR0_DefaultInterruptHandler 16D4 0 CODE 0 text34 dist/default/production\Lab08.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\fialk\AppData\Local\Temp\sov4xd.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 __end_of_INTERRUPT_InterruptManager 4E 0 CODE 0 intcode dist/default/production\Lab08.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Lab08.X.production.o
 __end_of___wmul 1612 0 CODE 0 text15 dist/default/production\Lab08.X.production.o
@@ -763,7 +763,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\Lab08.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\Lab08.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Lab08.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Lab08.X.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 _BAUDCON1 FB8 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\Lab08.X.production.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/production\Lab08.X.production.o
@@ -963,8 +963,8 @@ _TMR0_SetInterruptHandler 169C 0 CODE 0 text21 dist/default/production\Lab08.X.p
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Lab08.X.production.o
 __size_of_vfprintf 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __end_of_EUSART1_SetFramingErrorHandler 16BA 0 CODE 0 text27 dist/default/production\Lab08.X.production.o
-stackhi F37 0 ABS 0 - C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
-stacklo 300 0 ABS 0 - C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+stackhi F37 0 ABS 0 - C:\Users\fialk\AppData\Local\Temp\sov4xd.o
+stacklo 300 0 ABS 0 - C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 __end_of_EUSART1_SetOverrunErrorHandler 16B0 0 CODE 0 text26 dist/default/production\Lab08.X.production.o
 __end_of_EUSART1_Write 165E 0 CODE 0 text14 dist/default/production\Lab08.X.production.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\Lab08.X.production.o
@@ -1061,7 +1061,7 @@ __Ltext34 0 0 ABS 0 text34 dist/default/production\Lab08.X.production.o
 __Ltext35 0 0 ABS 0 text35 dist/default/production\Lab08.X.production.o
 __Ltext36 0 0 ABS 0 text36 dist/default/production\Lab08.X.production.o
 __Ltext37 0 0 ABS 0 text37 dist/default/production\Lab08.X.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\fialk\AppData\Local\Temp\sov4xd.o
 ___aldiv@dividend C 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
 _vfprintf 1350 0 CODE 0 text2 dist/default/production\Lab08.X.production.o
 __Lpowerup 4E 0 CODE 0 powerup dist/default/production\Lab08.X.production.o
@@ -1080,7 +1080,7 @@ _SPBRGH1 FB0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _EUSART1_is_rx_ready 1674 0 CODE 0 text30 dist/default/production\Lab08.X.production.o
 ctoa@fp 17 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
-__pmediumconst FDD2 0 MEDIUMCONST 0 mediumconst dist/default/production\Lab08.X.production.o
+__pmediumconst FDD0 0 MEDIUMCONST 0 mediumconst dist/default/production\Lab08.X.production.o
 __size_of_TMR0_SetInterruptHandler 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 ___aldiv@counter 14 0 COMRAM 1 cstackCOMRAM dist/default/production\Lab08.X.production.o
 __end_of_myTMR0ISR 10B0 0 CODE 0 text35 dist/default/production\Lab08.X.production.o
@@ -1179,7 +1179,7 @@ cstackBANK1 1 100 100 96 1
 reset_vec 0 0 0 4 1
 bssBANK2 1 200 200 100 1
 intcode 0 8 8 16CE 1
-mediumconst 0 FDD2 FDD2 22E 1
+mediumconst 0 FDD0 FDD0 230 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

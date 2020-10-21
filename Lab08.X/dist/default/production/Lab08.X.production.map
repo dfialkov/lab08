@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.30\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Lab08.X.production.sym \
   --cmf=dist/default/production\Lab08.X.production.cmf -z -Q18F26K22 \
-  -oC:\Users\fialk\AppData\Local\Temp\sd3cx2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\fialk\AppData\Local\Temp\sov4x2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Lab08.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0300h-0F37h -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=01000h-010FFhx240 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\fialk\AppData\Local\Temp\sd3cxd.o \
+  C:\Users\fialk\AppData\Local\Temp\sov4xd.o \
   dist/default/production\Lab08.X.production.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 18F26K22
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\fialk\AppData\Local\Temp\sd3cxd.o
+C:\Users\fialk\AppData\Local\Temp\sov4xd.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 4E       4E        4        4       0
@@ -46,7 +46,7 @@ dist/default/production\Lab08.X.production.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 temp                                 51       51        1        1       1
-                mediumconst                        FDD2     FDD2      22E     7EE9       0
+                mediumconst                        FDD0     FDD0      230     7EE8       0
                 text36                             16C4     16C4        A        4       0
                 text35                              FAA      FAA      106        4       0
                 text34                             16D4     16D4        2        4       0
@@ -145,7 +145,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   SMALLCONST     
 
         CLASS   MEDIUMCONST    
-                mediumconst                        FDD2     FDD2      22E         0
+                mediumconst                        FDD0     FDD0      230         0
 
         CLASS   COMRAM         
                 temp                                 51       51        1         1
@@ -218,7 +218,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackBANK0                    000060  000066  0000C6        60       1  BANK0   
                 cstackBANK1                    000100  000096  000196       100       1  BANK1   
                 bssBANK2                       000200  000100  000300       200       1  BANK2   
-                mediumconst                    00FDD2  00022E  010000      7EE9       0  MEDIUMCO
+                mediumconst                    00FDD0  000230  010000      7EE8       0  MEDIUMCO
 
 
 UNUSED ADDRESS RANGES
@@ -244,17 +244,17 @@ UNUSED ADDRESS RANGES
                          000196-0001FF               6A
                          000300-000F37              C38
         CODE             000004-000007                4
-                         0016D6-00FDD1             E6FC
+                         0016D6-00FDCF             E6FA
         COMRAM           000052-00005F                E
         CONST            000004-000007                4
-                         0016D6-00FDD1             E6FC
+                         0016D6-00FDCF             E6FA
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      0016D6-00FDD1             E6FC
+        MEDIUMCONST      0016D6-00FDCF             E6FA
         RAM              0000C6-0000FF               3A
                          000196-0001FF               6A
                          000300-000F37              100
         SFR              000F38-000FFF               28
-        SMALLCONST       0016D6-00FDD1              100
+        SMALLCONST       0016D6-00FDCF              100
         STACK            000300-000F37              C38
 
                                   Symbol Table
@@ -505,7 +505,7 @@ __Lintentry                                     intentry     000000
 __Lintret                                       intret       000000
 __Lintsave_regs                                 intsave_regs 000000
 __Lirdata                                       irdata       000000
-__Lmediumconst                                  mediumconst  00FDD2
+__Lmediumconst                                  mediumconst  00FDD0
 __LnvFARRAM                                     nvFARRAM     000000
 __Lnvbit                                        nvbit        000000
 __Lnvrram                                       nvrram       000000
@@ -642,7 +642,7 @@ __end_of_vfpfcnvrt                              text3        000BB2
 __end_of_vfprintf                               text2        0013B4
 __end_ofi2_TMR0_WriteTimer                      text36       0016CE
 __initialization                                cinit        0013B4
-__mediumconst                                   mediumconst  00FDD2
+__mediumconst                                   mediumconst  00FDD0
 __pbssBANK0                                     bssBANK0     000099
 __pbssBANK1                                     bssBANK1     000195
 __pbssBANK2                                     bssBANK2     000200
@@ -654,7 +654,7 @@ __pcstackCOMRAM                                 cstackCOMRAM 000001
 __pdataBANK1                                    dataBANK1    000193
 __pidataBANK1                                   idataBANK1   0016D2
 __pintcode                                      intcode      000008
-__pmediumconst                                  mediumconst  00FDD2
+__pmediumconst                                  mediumconst  00FDD0
 __ptext0                                        text0        000052
 __ptext1                                        text1        0015C4
 __ptext10                                       text10       000BB2
@@ -884,7 +884,7 @@ Total ram usage:      159 bytes
 		 -> STR_25(24), STR_24(3), STR_23(2), STR_22(6), 
 		 -> STR_21(33), STR_20(71), STR_19(43), STR_18(24), 
 		 -> STR_17(21), STR_16(7), STR_15(15), STR_14(33), 
-		 -> STR_13(29), STR_12(27), STR_11(15), STR_10(35), 
+		 -> STR_13(30), STR_12(27), STR_11(15), STR_10(35), 
 		 -> STR_9(4), STR_8(53), STR_7(4), STR_6(9), 
 		 -> STR_5(52), STR_4(3), STR_3(9), STR_2(25), 
 		 -> STR_1(11), 
@@ -926,7 +926,7 @@ Total ram usage:       12 bytes
 		 -> STR_25(24), STR_24(3), STR_23(2), STR_22(6), 
 		 -> STR_21(33), STR_20(71), STR_19(43), STR_18(24), 
 		 -> STR_17(21), STR_16(7), STR_15(15), STR_14(33), 
-		 -> STR_13(29), STR_12(27), STR_11(15), STR_10(35), 
+		 -> STR_13(30), STR_12(27), STR_11(15), STR_10(35), 
 		 -> STR_9(4), STR_8(53), STR_7(4), STR_6(9), 
 		 -> STR_5(52), STR_4(3), STR_3(9), STR_2(25), 
 		 -> STR_1(11), 
@@ -938,7 +938,7 @@ Total ram usage:       12 bytes
 		 -> STR_25(24), STR_24(3), STR_23(2), STR_22(6), 
 		 -> STR_21(33), STR_20(71), STR_19(43), STR_18(24), 
 		 -> STR_17(21), STR_16(7), STR_15(15), STR_14(33), 
-		 -> STR_13(29), STR_12(27), STR_11(15), STR_10(35), 
+		 -> STR_13(30), STR_12(27), STR_11(15), STR_10(35), 
 		 -> STR_9(4), STR_8(53), STR_7(4), STR_6(9), 
 		 -> STR_5(52), STR_4(3), STR_3(9), STR_2(25), 
 		 -> STR_1(11), 

@@ -9594,7 +9594,7 @@ void main(void) {
             uint16_t periodSumUs = periodSum * 25;
             uint16_t avgPeriodUs = periodSumUs/(crIdx-1);
             printf("\r\naverage period = %d us\r\n", avgPeriodUs);
-            printf("\r\average frequendy = %d Hz\r\n", 1000000/avgPeriodUs);
+            printf("\r\naverage frequendy = %d Hz\r\n", 1000000/avgPeriodUs);
         }
 
         if ((EUSART1_is_rx_ready())) {
