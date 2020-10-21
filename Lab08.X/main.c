@@ -107,6 +107,8 @@ void main(void) {
                 printf("%d - %d = %d\r\n", crossings[i], crossings[i-1], crossings[i] - crossings[i-1]);
                 periodSum += crossings[i] - crossings[i-1];
             }
+            //Instructions specifically say to do it this way. No idea why.
+            //Probably something to do with overflows.
             uint16_t periodSumUs = periodSum * 25;
             uint16_t avgPeriodUs = periodSumUs/(crIdx-1);
             printf("\r\naverage period = %d us\r\n", avgPeriodUs);
@@ -247,8 +249,8 @@ void myTMR0ISR(void) {
             }
             break;
         case MIC_WAIT_FOR_TRIGGER:
-            //Start sampling when sound in threshold
-            if(micReading <= MIC_THRESHOLD + thresholdRange && micReading >= MIC_THRESHOLD - thresholdRange){
+            //Start sampling when sound outside of threshold bounds
+            if(micReading >= MIC_THRESHOLD + thresholdRange || micReading <= MIC_THRESHOLD - thresholdRange){
                 adc_reading[bufferIdx] = micReading;
                 bufferIdx += 1;
                 timerState = MIC_ACQUIRE;

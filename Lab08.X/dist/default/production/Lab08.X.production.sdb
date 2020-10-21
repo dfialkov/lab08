@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F26K22 ]
 [d frameptr 4065 ]
-"223 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
+"225 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
 [e E6168 . `uc
 MIC_IDLE 0
 MIC_WAIT_FOR_TRIGGER 1
@@ -73,7 +73,7 @@ channel_FVRBuf2 31
 [v ___omul __omul `(uo  1 e 8 0 ]
 "45 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"226
+"228
 [v _myTMR0ISR myTMR0ISR `(v  1 e 1 0 ]
 "62 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -391,9 +391,9 @@ channel_FVRBuf2 31
 [v _adc_reading adc_reading `[256]uc  1 e 256 0 ]
 "36
 [v _thresholdRange thresholdRange `us  1 e 2 0 ]
-"223
-[v _timerState timerState `E6168  1 e 1 0 ]
 "225
+[v _timerState timerState `E6168  1 e 1 0 ]
+"227
 [v _bufferIdx bufferIdx `us  1 e 2 0 ]
 [s S523 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
@@ -428,17 +428,17 @@ channel_FVRBuf2 31
 [v main@crossings crossings `[128]uc  1 a 128 0 ]
 "94
 [v main@crIdx crIdx `us  1 a 2 141 ]
-"111
+"113
 [v main@avgPeriodUs avgPeriodUs `us  1 a 2 132 ]
 "105
 [v main@periodSum periodSum `us  1 a 2 130 ]
-"110
-[v main@avgPeriod avgPeriod `us  1 a 2 128 ]
+"112
+[v main@periodSumUs periodSumUs `us  1 a 2 128 ]
 "54
 [v main@i i `us  1 a 2 137 ]
 "55
 [v main@cmd cmd `uc  1 a 1 134 ]
-"216
+"218
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -718,12 +718,12 @@ channel_FVRBuf2 31
 {
 "163
 } 0
-"226 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
+"228 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\main.c
 [v _myTMR0ISR myTMR0ISR `(v  1 e 1 0 ]
 {
-"229
+"231
 [v myTMR0ISR@micReading micReading `uc  1 a 1 6 ]
-"283
+"285
 } 0
 "122 C:\Users\fialk\Google Drive\Code\Embedded\lab08\Lab08.X\mcc_generated_files/tmr0.c
 [v i2_TMR0_WriteTimer TMR0_WriteTimer `(v  1 e 1 0 ]
